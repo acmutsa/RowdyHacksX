@@ -2,7 +2,7 @@ import ConfirmDialogue from "@/components/rsvp/ConfirmDialogue";
 import c from "config";
 import { auth } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
-import { db } from "db";
+import { count, db } from "db";
 import { eq } from "db/drizzle";
 import { users } from "db/schema";
 import ClientToast from "@/components/shared/ClientToast";
@@ -38,12 +38,19 @@ export default async function RsvpPage({
 	}
 
 	const rsvpEnabled = await kv.get("config:registration:allowRSVPs");
+	const rsvpLimit = await kv.get<number>("config:registration:maxRSVPs") || c.rsvpDefaultLimit;
+	const rsvpUserCount = await db
+		.select({ count: count() })
+		.from(users)
+		.where(eq(users.rsvp, true))
+		.limit(rsvpLimit)
+		.then((result) => result[0].count);
 
 	// TODO: fix type jank here
-	if (
-		parseRedisBoolean(rsvpEnabled as string | boolean | null | undefined, true) === true ||
-		user.rsvp === true
-	) {
+	const isRsvpPossible = parseRedisBoolean(rsvpEnabled as string | boolean | null | undefined, true) === true &&
+		rsvpUserCount < rsvpLimit;
+
+	if (isRsvpPossible || user.rsvp === true) {
 		return (
 			<>
 				<ClientToast />
