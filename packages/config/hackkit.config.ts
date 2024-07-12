@@ -8,6 +8,7 @@ export default {
 	botName: "HackKit",
 	botParticipantRole: "RH25 Participant",
 	hackathonTimezone: "America/Chicago",
+	rsvpDefaultLimit: 500,
 	localUniversityName: "The University of Texas at San Antonio",
 	localUniversityShortIDName: "ABC123",
 	localUniversityShortIDMaxLength: 6,
