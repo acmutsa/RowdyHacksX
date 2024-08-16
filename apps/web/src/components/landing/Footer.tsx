@@ -107,16 +107,17 @@ export default function Footer() {
   };
 
   return (
-    <section className="w-full items-center justify-center min-h-[25vh] border-t-2 bg-white border-muted-foreground p-8 md:px-10">
+    <section className="w-full items-center justify-center min-h-[25vh] border-t-2 bg-white border-muted-foreground sm:p-8 p-1 py-8 md:px-10">
       <div className="grid sm:grid-cols-4 lg:grid-cols-5 grid-cols-2 gap-y-8 md:justify-items-center lg:justify-items-start">
-        <div className="sm:row-span-3 flex gap-1 items-center lg:row-span-1 font-black col-span-2 row-span-1 lg:justify-self-start justify-self-center">
+        <div className="sm:row-span-3 flex items-center lg:row-span-1 font-black col-span-2 row-span-1 lg:justify-self-start justify-self-center">
           <Image
+            className="w-20 sm:w-28"
             src="/img/logo/rhbttf.svg"
             alt="placeholder image"
             width={100}
             height={50}
           />
-          <h1 className="font-bttf pl-0 pr-10 text-4xl bg-gradient-to-b from-orange-600 via-yellow-300 text-transparent bg-clip-text to-orange-600">
+          <h1 className="font-bttf pl-0 pr-2 sm:text-4xl text-3xl bg-gradient-to-b from-orange-600 via-yellow-300 text-transparent bg-clip-text to-orange-600">
             HACK&lt;
             <br></br>&future&gt;
           </h1>
