@@ -113,7 +113,7 @@ export default function Footer() {
           <Image
             className="w-20 sm:w-28"
             src="/img/logo/rhbttf.svg"
-            alt="placeholder image"
+            alt="RowdyHacks Logo"
             width={100}
             height={50}
           />
@@ -146,10 +146,10 @@ export default function Footer() {
           <Link href="https://www.facebook.com/UTSA.ACM">
             <Facebook className="invert dark:invert-0" />
           </Link>
-          <Link href="https://twitter.com/rowdyhacks/">
+          <Link href="https://github.com/acmutsa/RowdyHacksX">
             <Github className="invert dark:invert-0" />
           </Link>
-          <Link href="https://github.com/acmutsa/RowdyHacks24/">
+          <Link href="https://go.rowdyhacks.org/discord">
             <Image
               className="select-none"
               src="/img/landing/discord_icon.svg"
