@@ -29,18 +29,20 @@ export default function About() {
               </Balancer>
             </p>
           </div>
-          {/* Placeholder untill image is decided */}
+          {/* Placeholder untill image is decided 
           <Image
             src={rh_logo}
             alt="rowdy hacks logo"
             className="w-80 sm:w-96 md:w-[25rem] lg:w-[26rem] 2xl:w-[34rem] mx-auto"
           />          
-          {/* Placeholder untill image is decided */}
+          */}
+          {/* Placeholder untill image is decided 
           <Image
             src={rh_logo}
             alt="rowdy hacks logo"
             className="w-80 sm:w-96 md:w-[25rem] lg:w-[26rem] 2xl:w-[34rem] mx-auto"
           />
+          */}
           <div className="pb-20 md:pb-0 flex flex-col justify-center">
             <div className="flex flex-col justify-center gap-y-10 bg-white border-orange-500 border-4 rounded-xl p-5">
               <h1 className="font-oswald text-center text-5xl font-bold italic text-orange-500 md:text-left lg:text-6xl">
@@ -79,12 +81,13 @@ export default function About() {
           </div>
 
           
-          {/* Placeholder untill image is decided */}
+          {/* Placeholder untill image is decided
           <Image
             src={rh_logo}
             alt="rowdy hacks logo"
             className="w-80 sm:w-96 md:w-[25rem] lg:w-[26rem] 2xl:w-[34rem] mx-auto"
           />
+          */}
         </div>
     </section>
     
