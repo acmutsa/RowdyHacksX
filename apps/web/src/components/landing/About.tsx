@@ -13,8 +13,8 @@ export default function About() {
   };
   return (
     <section
-      className="flex w-full items-center justify-center min-h-screen border-y-2 border-muted-foreground"
-      id="About">
+    className="relative z-10 min-h-screen w-full bg-[#1D41AE] bg-[url('/img/landing/About_background.svg')] bg-no-repeat bg-cover px-5 py-20"
+    id="About">
       <div className="grid grid-cols-1 gap-y-16 md:grid-cols-2">
           <div className="flex flex-col justify-center gap-y-6 bg-white border-orange-500 border-4 rounded-xl p-5">
             <h1 className="font-oswald text-center text-5xl font-bold italic text-orange-500 md:text-left lg:text-6xl">
@@ -41,26 +41,6 @@ export default function About() {
             alt="rowdy hacks logo"
             className="w-80 sm:w-96 md:w-[25rem] lg:w-[26rem] 2xl:w-[34rem] mx-auto"
           />
-          <div className="flex flex-col justify-center gap-y-10 bg-white border-orange-500 border-4 rounded-xl p-5">
-            <h1 className="font-black text-6xl text-orange-500 text-center">
-              Celebrating 10 Years
-              <br />
-              of RowdyHacks
-            </h1>
-            <p className="text-center font-mono text-lg font-bold text-orange-500 md:text-left">
-              <Balancer>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vehicula
-                risus non dui blandit, non ornare felis interdum. Integer fermentum eros vitae
-                leo fermentum, ac fermentum erat sollicitudin. Curabitur accumsan molestie
-                turpis, nec elementum lectus dictum vel. Nunc quis orci vel arcu iaculis
-                vehicula. Sed finibus sagittis ex, quis cursus sem ornare at. Maecenas eget eros
-                tellus. Vestibulum id libero sit amet magna rhoncus fermentum nec et velit.
-                Fusce varius nisl sit amet consequat fermentum.
-              </Balancer>
-            </p>
-            <h2 className="text-xl text-orange-500 font-mono font-bold">🧡 The RowdyHacks Team</h2>
-          </div>
-
           <div className="pb-20 md:pb-0 flex flex-col justify-center">
             <div className="flex flex-col justify-center gap-y-10 bg-white border-orange-500 border-4 rounded-xl p-5">
               <h1 className="font-oswald text-center text-5xl font-bold italic text-orange-500 md:text-left lg:text-6xl">
@@ -76,6 +56,29 @@ export default function About() {
               </p>
             </div>
           </div>
+          <div className="pb-20 md:pb-0 flex flex-col justify-center">
+            <div className="flex flex-col justify-center gap-y-10 bg-white border-orange-500 border-4 rounded-xl p-5">
+              <h1 className="font-oswald text-center text-5xl font-bold italic text-orange-500 md:text-left lg:text-6xl">
+                Celebrating 10 Years
+                <br />
+                of RowdyHacks
+              </h1>
+              <p className="text-center font-mono text-lg font-bold text-orange-500 md:text-left">
+                <Balancer>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vehicula
+                  risus non dui blandit, non ornare felis interdum. Integer fermentum eros vitae
+                  leo fermentum, ac fermentum erat sollicitudin. Curabitur accumsan molestie
+                  turpis, nec elementum lectus dictum vel. Nunc quis orci vel arcu iaculis
+                  vehicula. Sed finibus sagittis ex, quis cursus sem ornare at. Maecenas eget eros
+                  tellus. Vestibulum id libero sit amet magna rhoncus fermentum nec et velit.
+                  Fusce varius nisl sit amet consequat fermentum.
+                </Balancer>
+              </p>
+              <h2 className="text-xl text-orange-500 font-mono font-bold">🧡 The RowdyHacks Team</h2>
+            </div>
+          </div>
+
+          
           {/* Placeholder untill image is decided */}
           <Image
             src={rh_logo}
