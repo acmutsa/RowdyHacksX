@@ -43,8 +43,8 @@ export default function About() {
             className="w-80 sm:w-96 md:w-[25rem] lg:w-[26rem] 2xl:w-[34rem] mx-auto"
           />
           */}
-          <div className="pb-20 md:pb-0 flex flex-col justify-center">
-            <div className="flex flex-col justify-center gap-y-10 bg-white border-orange-500 border-4 rounded-xl p-5">
+          <div className="grid grid-cols-1 gap-y-16 md:grid-cols-2">
+            <div className="flex flex-col justify-center gap-y-6 bg-white border-orange-500 border-4 rounded-xl p-5">
               <h1 className="font-oswald text-center text-5xl font-bold italic text-orange-500 md:text-left lg:text-6xl">
                 WHO CAN ATTEND?
               </h1>
@@ -58,8 +58,8 @@ export default function About() {
               </p>
             </div>
           </div>
-          <div className="pb-20 md:pb-0 flex flex-col justify-center">
-            <div className="flex flex-col justify-center gap-y-10 bg-white border-orange-500 border-4 rounded-xl p-5">
+          <div className="grid grid-cols-1 gap-y-16 md:grid-cols-2">
+            <div className="flex flex-col justify-center gap-y-6 bg-white border-orange-500 border-4 rounded-xl p-5">
               <h1 className="font-oswald text-center text-5xl font-bold italic text-orange-500 md:text-left lg:text-6xl">
                 Celebrating 10 Years
                 <br />
