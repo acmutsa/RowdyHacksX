@@ -58,7 +58,7 @@ export default function About() {
           </div>
         </div>
 
-        <div className="flex justify-center items-center w-full h-screen gap-y-16 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-y-16 md:grid-cols-2">
           <div className="flex flex-col justify-center gap-y-10 bg-white border-orange-500 border-4 rounded-xl p-5">
             <h1 className="font-oswald text-center text-5xl font-bold italic text-orange-500 md:text-center lg:text-6xl">
               Celebrating 10 Years
