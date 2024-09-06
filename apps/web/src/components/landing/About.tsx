@@ -15,7 +15,7 @@ export default function About() {
     <section
     className="relative z-10 min-h-screen w-full bg-[#1A3A9E] bg-[url('/img/landing/About_background.svg')] bg-no-repeat bg-cover px-5 py-20"
     id="About">
-      <div className="grid grid-cols-2 gap-y-16 md:grid-cols-2">
+      <div className="grid grid-cols-1 gap-y-16 md:grid-cols-2">
           <div className="flex flex-col justify-center gap-y-6 bg-white border-orange-500 border-4 rounded-xl p-5">
             <h1 className="font-oswald text-center text-5xl font-bold italic text-orange-500 md:text-left lg:text-6xl">
               ABOUT US
@@ -67,7 +67,13 @@ export default function About() {
             </h1>
             <p className="text-center font-mono text-lg font-bold text-orange-500 md:text-center">
               <Balancer>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vehicula risus non dui blandit, non ornare felis interdum. Integer fermentum eros vitae leo fermentum, ac fermentum erat sollicitudin. Curabitur accumsan molestie turpis, nec elementum lectus dictum vel. Nunc quis orci vel arcu iaculis vehicula. Sed finibus sagittis ex, quis cursus sem ornare at. Maecenas eget eros tellus. Vestibulum id libero sit amet magna rhoncus fermentum nec et velit. Fusce varius nisl sit amet consequat fermentum.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vehicula
+                risus non dui blandit, non ornare felis interdum. Integer fermentum eros vitae
+                leo fermentum, ac fermentum erat sollicitudin. Curabitur accumsan molestie
+                turpis, nec elementum lectus dictum vel. Nunc quis orci vel arcu iaculis
+                vehicula. Sed finibus sagittis ex, quis cursus sem ornare at. Maecenas eget eros
+                tellus. Vestibulum id libero sit amet magna rhoncus fermentum nec et velit.
+                Fusce varius nisl sit amet consequat fermentum.              
               </Balancer>
             </p>
             <h2 className="text-center text-orange-500 font-mono font-bold">🧡 The RowdyHacks Team</h2>
