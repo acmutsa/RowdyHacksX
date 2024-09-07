@@ -1,78 +1,11 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Instagram, Facebook, Twitter, Github } from "lucide-react";
-import {
-  DropdownMenu,
-  DropdownMenuTrigger,
-  DropdownMenuItem,
-  DropdownMenuContent,
-} from "../shadcn/ui/dropdown-menu";
 import c from "config";
 import { camelCaseToWords } from "@/lib/utils/shared/camelCaseToWords";
-
-interface Props {
-  className?: string;
-}
+import FooterLinks from "./FooterLinks";
 
 export default function Footer() {
-  const LinkSection = ({
-    title,
-    data,
-  }: {
-    title: string;
-    data: Readonly<{ name: string; link: string }[]>;
-  }) => {
-    const [small, setSmall] = useState(true);
-
-    useEffect(() => {
-      setSmall(window.innerWidth <= 1024);
-      const windowSizeQuery = window.matchMedia("(max-width: 1024px)");
-      const f = (e: MediaQueryListEvent) => setSmall(e.matches);
-
-      windowSizeQuery.addEventListener("change", f);
-
-      return () => windowSizeQuery.removeEventListener("change", f);
-    }, []);
-
-    if (small) {
-      return (
-        <div className="col-span-2 lg:col-span-1 w-full flex">
-          <DropdownMenu>
-            <DropdownMenuTrigger className="text-md font-bold mx-auto">
-              <h1 className="text-xl text-orange-500">{title}</h1>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className="bg-white">
-              {data.map(({ name, link }) => (
-                <DropdownMenuItem>
-                  <Link
-                    className="text-sm font-semibold text-orange-500 block"
-                    href={link}
-                  >
-                    {name}
-                  </Link>
-                </DropdownMenuItem>
-              ))}
-            </DropdownMenuContent>
-          </DropdownMenu>
-        </div>
-      );
-    } else {
-      return (
-        <div className="flex flex-col">
-          <h1 className="font-bold text-2xl mb-2 text-orange-500">{title}</h1>
-          {data.map(({ link, name }) => (
-            <Link href={link} className="text-sm text-zinc-950 hover:underline">
-              <h1 className="font-semibold">{name}</h1>
-            </Link>
-          ))}
-        </div>
-      );
-    }
-  };
-
   return (
     <section className="w-full items-center justify-center min-h-[25vh] border-t-2 bg-white border-muted-foreground sm:p-8 p-1 py-8 md:px-10">
       <div className="grid sm:grid-cols-4 lg:grid-cols-5 grid-cols-2 gap-y-8 md:justify-items-center lg:justify-items-start">
@@ -90,7 +23,7 @@ export default function Footer() {
           </h1>
         </div>
         {Object.entries(c.footerLinkItems).map(([title, data]) => (
-          <LinkSection title={camelCaseToWords(title)} data={data} />
+          <FooterLinks title={camelCaseToWords(title)} data={data} />
         ))}
         <div className="col-span-2 lg:col-span-1 justify-self-center">
           <Link href="https://vercel.com">
