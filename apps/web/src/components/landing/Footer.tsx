@@ -10,45 +10,12 @@ import {
   DropdownMenuItem,
   DropdownMenuContent,
 } from "../shadcn/ui/dropdown-menu";
+import c from "config";
+import { camelCaseToWords } from "@/lib/utils/shared/camelCaseToWords";
 
 interface Props {
   className?: string;
 }
-
-interface LinkData {
-  name: string;
-  link: string;
-}
-
-function linkItem(name: string, link: string): LinkData {
-  return { name, link };
-}
-
-// Maybe source this from the configuration file so that other hackathons can define their links in a more declarative way.
-const dropdownItemMap = {
-  Resources: [
-    linkItem("Register", "/register"),
-    linkItem("FAQ", "/faq"),
-    linkItem("Code of Conduct", "/conduct"),
-    linkItem("Contact Us", "/contact"),
-    linkItem("ACM-W", "https://acmutsa.org/suborg_acmw"),
-    linkItem("ACM UTSA", "https://acmutsa.org/"),
-  ],
-  Links: [
-    linkItem("Open Source", "https://github.com/acmutsa/CodeQuantum2023"),
-  ],
-  "Other Hackathons": [
-    linkItem("CodeQuantum", "https://cqhacks.org/"),
-    linkItem("RowdyDatathon", "https://www.rowdydatathon.org/"),
-    linkItem("TAMUHack", "https://tamuhack.com/"),
-    linkItem("WEHack", "https://wehackutd.com/"),
-    linkItem("HackUTD", "https://hackutd.co/"),
-    linkItem("HackTX", "https://hacktx.com/"),
-    linkItem("HackUNT", "https://unthackathon.com/#/"),
-    linkItem("HackUTA", "https://hackuta.org/"),
-    linkItem("Hacklahoma", "https://hacklahoma.org/"),
-  ],
-};
 
 export default function Footer() {
   const LinkSection = ({
@@ -56,7 +23,7 @@ export default function Footer() {
     data,
   }: {
     title: string;
-    data: LinkData[];
+    data: Readonly<{ name: string; link: string }[]>;
   }) => {
     const [small, setSmall] = useState(true);
 
@@ -122,8 +89,8 @@ export default function Footer() {
             <br></br>&future&gt;
           </h1>
         </div>
-        {Object.entries(dropdownItemMap).map(([title, data]) => (
-          <LinkSection title={title} data={data} />
+        {Object.entries(c.footerLinkItems).map(([title, data]) => (
+          <LinkSection title={camelCaseToWords(title)} data={data} />
         ))}
         <div className="col-span-2 lg:col-span-1 justify-self-center">
           <Link href="https://vercel.com">
