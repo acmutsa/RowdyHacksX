@@ -51,13 +51,16 @@ export default function About() {
           </h1>
           <p className="text-center font-mono text-lg font-bold text-[#ea580c]">
             <Balancer>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vehicula
-              risus non dui blandit, non ornare felis interdum. Integer fermentum eros
-              vitae leo fermentum, ac fermentum erat sollicitudin. Curabitur accumsan
-              molestie turpis, nec elementum lectus dictum vel. Nunc quis orci vel arcu
-              iaculis vehicula. Sed finibus sagittis ex, quis cursus sem ornare at.
-              Maecenas eget eros tellus. Vestibulum id libero sit amet magna rhoncus
-              fermentum nec et velit. Fusce varius nisl sit amet consequat fermentum.
+              This year marks a significant milestone for RowdyHacks, as we celebrate 10 years of fostering 
+              creativity, collaboration, and mentorship right here at UTSA! Since our inception, RowdyHacks 
+              has brought together students, developers, and tech enthusiasts from all walks of life to engage 
+              in healthy competition, collaborate on innovative projects, and learn new skills they might not 
+              encounter in a traditional classroom setting. Over the past decade, we've witnessed incredible growth. 
+              We take pride in our inclusive community-building and empowering the next generation of tech leaders. 
+              Together, we've created an ecosystem where innovation thrives, friendships are formed, and the future 
+              is built, one hack at a time. As we celebrate this remarkable journey, we look forward to what the 
+              next 10 years hold for RowdyHacks. Whether you've been with us from the start or are joining us for 
+              the first time, let's make this milestone year one to remember. Let's hack, create, and shape the future—together!
             </Balancer>
           </p>
           <h2 className="text-center text-[#ea580c] font-mono font-bold">
