@@ -9,13 +9,13 @@ import rh_logo from "../../../public/img/logo/rhbttf.png";
 export default function About() {
   return (
     <section
-      className="relative z-10 min-h-screen w-full bg-[#1A3A9E] bg-[url('/img/landing/About_background.svg')] bg-no-repeat bg-cover px-5 py-20"
+      className="relative z-10 min-h-screen w-full bg-[#1A3A9E] bg-[url('/img/landing/About_background.svg')] bg-no-repeat bg-cover px-5 py-20"  
       id="About"
     >
       <div className="container mx-auto grid grid-cols-1 gap-y-16 gap-x-10 md:grid-cols-2">
         {/* ABOUT US Section */}
         <div className="flex flex-col justify-center gap-y-6 bg-white border-[#ea580c] border-4 rounded-xl p-5">
-          <h1 className="font-oswald text-center text-5xl font-bold italic text-[#ea580c] md:text-center lg:text-6xl">
+          <h1 className="font-oswald text-center text-3xl font-bold italic text-[#ea580c] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
             ABOUT US
           </h1>
           <p className="text-center font-mono text-lg font-bold text-[#ea580c] md:text-center">
@@ -30,7 +30,7 @@ export default function About() {
 
         {/* WHO CAN ATTEND Section */}
         <div className="flex flex-col justify-center gap-y-6 bg-white border-[#ea580c] border-4 rounded-xl p-5">
-          <h1 className="font-oswald text-center text-5xl font-bold italic text-[#ea580c] md:text-center lg:text-6xl">
+          <h1 className="font-oswald text-center text-3xl font-bold italic text-[#ea580c] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
             WHO CAN ATTEND?
           </h1>
           <p className="text-center font-mono text-lg font-bold text-[#ea580c] md:text-center">
@@ -46,8 +46,11 @@ export default function About() {
       {/* Celebrating 10 Years Section */}
       <div className="container mx-auto mt-16 grid grid-cols-1 gap-y-16 md:grid-cols-1">
         <div className="flex flex-col justify-center gap-y-10 bg-white border-[#ea580c] border-4 rounded-xl p-5">
-          <h1 className="font-oswald text-center text-5xl font-bold italic text-[#ea580c] lg:text-6xl">
-            Celebrating 10 Years <br /> of RowdyHacks
+          <h1 className="font-oswald text-center text-3xl font-bold italic text-[#ea580c] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
+            CELEBRATING 10 YEARS 
+            <br /> 
+            OF ROWDYHACKS
+
           </h1>
           <p className="text-center font-mono text-lg font-bold text-[#ea580c]">
             <Balancer>
@@ -67,13 +70,6 @@ export default function About() {
             🧡 The RowdyHacks Team
           </h2>
         </div>
-
-        {/* Placeholder for future image */}
-        {/* <Image
-          src={rh_logo}
-          alt="RowdyHacks 10 Year Anniversary Logo"
-          className="w-80 sm:w-96 md:w-[25rem] lg:w-[26rem] 2xl:w-[34rem] mx-auto"
-        /> */}
       </div>
     </section>
   );
