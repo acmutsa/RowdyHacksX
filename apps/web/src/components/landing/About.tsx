@@ -14,7 +14,7 @@ export default function About() {
     >
       <div className="container mx-auto grid grid-cols-1 gap-y-16 gap-x-10 md:grid-cols-2">
         {/* ABOUT US Section */}
-        <div className="flex flex-col justify-center gap-y-6 bg-white border-[#ea580c] border-4 rounded-xl p-5">
+        <div className="flex flex-col justify-center gap-y-6 bg-white border-[#ea580c] border-4 rounded-xl p-5 transform transition-transform duration-300 hover:scale-105">
           <h1 className="font-oswald text-center text-3xl font-bold italic text-[#ea580c] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
             ABOUT US
           </h1>
@@ -22,14 +22,14 @@ export default function About() {
             <Balancer>
               RowdyHacks is a free, weekend-long, overnight hackathon hosted at
               UTSA! Students can join us to network, code, collaborate, and
-              compete. Whether it's your first hackathon, or your seventh, 
+              compete. Whether it's your first hackathon or your seventh, 
               we offer something for everyone!
             </Balancer>
           </p>
         </div>
 
         {/* WHO CAN ATTEND Section */}
-        <div className="flex flex-col justify-center gap-y-6 bg-white border-[#ea580c] border-4 rounded-xl p-5">
+        <div className="flex flex-col justify-center gap-y-6 bg-white border-[#ea580c] border-4 rounded-xl p-5 transform transition-transform duration-300 hover:scale-105">
           <h1 className="font-oswald text-center text-3xl font-bold italic text-[#ea580c] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
             WHO CAN ATTEND?
           </h1>
@@ -45,7 +45,7 @@ export default function About() {
 
       {/* Celebrating 10 Years Section */}
       <div className="container mx-auto mt-16 grid grid-cols-1 gap-y-16 md:grid-cols-1">
-        <div className="flex flex-col justify-center gap-y-10 bg-white border-[#ea580c] border-4 rounded-xl p-5">
+        <div className="flex flex-col justify-center gap-y-10 bg-white border-[#ea580c] border-4 rounded-xl p-5 transform transition-transform duration-300 hover:scale-105">
           <h1 className="font-oswald text-center text-3xl font-bold italic text-[#ea580c] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
             CELEBRATING 10 YEARS 
             <br /> 
