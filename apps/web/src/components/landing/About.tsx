@@ -22,8 +22,8 @@ export default function About() {
             <Balancer>
               RowdyHacks is a free, weekend-long, overnight hackathon hosted at
               UTSA! Students can join us to network, code, collaborate, and
-              compete. We welcome hackers from all disciplines, backgrounds, &
-              technical levels!
+              compete. Whether it's your first hackathon, or your seventh, 
+              we offer something for everyone!
             </Balancer>
           </p>
         </div>
