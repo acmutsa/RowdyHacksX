@@ -1,19 +1,13 @@
-"use client";
+"use client";  // Add this at the top
+
 import { useState } from "react";
 import Balancer from "react-wrap-balancer";
-import Image from "next/image";
-import D1 from "../../../public/img/landing/d1.svg";
-import D2 from "../../../public/img/landing/d2.svg";
-import D3 from "../../../public/img/landing/d3.svg";
-import D4 from "../../../public/img/landing/d4.svg";
-import rh_logo from "../../../public/img/logo/rhbttf.png";
 
 export default function About() {
-  // State to control accordion
-  const [isOpen, setIsOpen] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
 
-  const toggleAccordion = () => {
-    setIsOpen(!isOpen);
+  const toggleExpand = () => {
+    setIsExpanded(!isExpanded);
   };
 
   return (
@@ -60,24 +54,14 @@ export default function About() {
             <br /> 
             OF ROWDYHACKS
           </h1>
-          <p className="text-center font-mono text-lg font-bold text-[#ea580c]">
+
+          {/* Truncated content with read more */}
+          <div className="text-center font-mono text-lg font-bold text-[#ea580c]">
             <Balancer>
-              This year marks a significant milestone for RowdyHacks, as we celebrate 10 years of fostering 
-              creativity, collaboration, and mentorship right here at UTSA! 
-            </Balancer>
-          </p>
-          {/* Accordion functionality only on mobile */}
-          <div className="block md:hidden">
-            <button
-              onClick={toggleAccordion}
-              className="text-center font-mono text-lg font-bold text-[#ea580c]"
-            >
-              {isOpen ? "Hide Details" : "Read More"}
-            </button>
-            {isOpen && (
-              <p className="text-center font-mono text-lg font-bold text-[#ea580c]">
-                <Balancer>
-                  Since our inception, RowdyHacks 
+              {isExpanded ? (
+                <>
+                  This year marks a significant milestone for RowdyHacks, as we celebrate 10 years of fostering 
+                  creativity, collaboration, and mentorship right here at UTSA! Since our inception, RowdyHacks 
                   has brought together students, developers, and tech enthusiasts from all walks of life to engage 
                   in healthy competition, collaborate on innovative projects, and learn new skills they might not 
                   encounter in a traditional classroom setting. Over the past decade, we've witnessed incredible growth. 
@@ -86,26 +70,20 @@ export default function About() {
                   is built, one hack at a time. As we celebrate this remarkable journey, we look forward to what the 
                   next 10 years hold for RowdyHacks. Whether you've been with us from the start or are joining us for 
                   the first time, let's make this milestone year one to remember. Let's hack, create, and shape the future—together!
-                </Balancer>
-              </p>
-            )}
-          </div>
-
-          {/* Full content displayed on desktop */}
-          <div className="hidden md:block">
-            <p className="text-center font-mono text-lg font-bold text-[#ea580c]">
-              <Balancer>
-                Since our inception, RowdyHacks 
-                has brought together students, developers, and tech enthusiasts from all walks of life to engage 
-                in healthy competition, collaborate on innovative projects, and learn new skills they might not 
-                encounter in a traditional classroom setting. Over the past decade, we've witnessed incredible growth. 
-                We take pride in our inclusive community-building and empowering the next generation of tech leaders. 
-                Together, we've created an ecosystem where innovation thrives, friendships are formed, and the future 
-                is built, one hack at a time. As we celebrate this remarkable journey, we look forward to what the 
-                next 10 years hold for RowdyHacks. Whether you've been with us from the start or are joining us for 
-                the first time, let's make this milestone year one to remember. Let's hack, create, and shape the future—together!
-              </Balancer>
-            </p>
+                </>
+              ) : (
+                <>
+                  This year marks a significant milestone for RowdyHacks, as we celebrate 10 years of fostering creativity, 
+                  collaboration, and mentorship right here at UTSA! ...
+                </>
+              )}
+            </Balancer>
+            <button
+              onClick={toggleExpand}
+              className="text-lg font-mono font-bold text-[#ea580c] underline mt-4"
+            >
+              {isExpanded ? "read less" : "read more"}
+            </button>
           </div>
 
           <h2 className="text-center text-[#ea580c] font-mono font-bold">
