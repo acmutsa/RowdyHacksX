@@ -1,8 +1,8 @@
 export const defaultTheme = "dark";
 
 export default {
-	hackathonName: "HackKit",
-	itteration: "Your Iteration Here",
+	hackathonName: "RowdyHacks",
+	itteration: "X",
 	siteUrl: "https://rowdyhacks.org", // Do not have a trailing slash
 	defaultMetaDataDescription: "Your Metadata Description Here",
 	botName: "HackKit",
