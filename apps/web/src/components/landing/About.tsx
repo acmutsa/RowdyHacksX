@@ -16,7 +16,6 @@ export default function About() {
     setIsOpen(!isOpen);
   };
 
-
   return (
     <section
       className="relative z-10 min-h-screen w-full bg-[#1A3A9E] bg-[url('/img/landing/About_background.svg')] bg-no-repeat bg-cover px-5 py-20"  
