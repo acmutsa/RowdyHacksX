@@ -16,7 +16,7 @@ export default function About() {
     setIsOpen(!isOpen);
   };
 
-  
+
   return (
     <section
       className="relative z-10 min-h-screen w-full bg-[#1A3A9E] bg-[url('/img/landing/About_background.svg')] bg-no-repeat bg-cover px-5 py-20"  
@@ -61,7 +61,12 @@ export default function About() {
             <br /> 
             OF ROWDYHACKS
           </h1>
-
+          <p className="text-center font-mono text-lg font-bold text-[#ea580c]">
+            <Balancer>
+              This year marks a significant milestone for RowdyHacks, as we celebrate 10 years of fostering 
+              creativity, collaboration, and mentorship right here at UTSA! 
+            </Balancer>
+          </p>
           {/* Accordion functionality only on mobile */}
           <div className="block md:hidden">
             <button
@@ -73,8 +78,7 @@ export default function About() {
             {isOpen && (
               <p className="text-center font-mono text-lg font-bold text-[#ea580c]">
                 <Balancer>
-                  This year marks a significant milestone for RowdyHacks, as we celebrate 10 years of fostering 
-                  creativity, collaboration, and mentorship right here at UTSA! Since our inception, RowdyHacks 
+                  Since our inception, RowdyHacks 
                   has brought together students, developers, and tech enthusiasts from all walks of life to engage 
                   in healthy competition, collaborate on innovative projects, and learn new skills they might not 
                   encounter in a traditional classroom setting. Over the past decade, we've witnessed incredible growth. 
@@ -92,8 +96,7 @@ export default function About() {
           <div className="hidden md:block">
             <p className="text-center font-mono text-lg font-bold text-[#ea580c]">
               <Balancer>
-                This year marks a significant milestone for RowdyHacks, as we celebrate 10 years of fostering 
-                creativity, collaboration, and mentorship right here at UTSA! Since our inception, RowdyHacks 
+                Since our inception, RowdyHacks 
                 has brought together students, developers, and tech enthusiasts from all walks of life to engage 
                 in healthy competition, collaborate on innovative projects, and learn new skills they might not 
                 encounter in a traditional classroom setting. Over the past decade, we've witnessed incredible growth. 
