@@ -1,18 +1,20 @@
 "use client";  // Add this at the top
 
-import { useState } from "react";
-import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/shadcn/ui/accordion";
+import { useState, useRef } from "react";
 import Balancer from "react-wrap-balancer";
 
-
 export default function About() {
-  // State to track whether the accordion is open
   const [isExpanded, setIsExpanded] = useState(false);
+  const readMoreRef = useRef<HTMLDivElement | null>(null); // Type the ref
 
-  // Toggle function for accordion expansion
-  const toggleAccordion = () => {
+  const toggleExpand = () => {
     setIsExpanded(!isExpanded);
+    // Smooth scroll to the element when expanded
+    if (readMoreRef.current) {
+      readMoreRef.current.scrollIntoView({ behavior: "smooth" });
+    }
   };
+
   return (
     <section
       className="relative z-10 min-h-screen w-full bg-[#1A3A9E] bg-[url('/img/landing/About_background.svg')] bg-no-repeat bg-cover px-5 py-20"  
@@ -20,7 +22,7 @@ export default function About() {
     >
       <div className="container mx-auto grid grid-cols-1 gap-y-16 gap-x-10 md:grid-cols-2">
         {/* ABOUT US Section */}
-        <div className="flex flex-col justify-center gap-y-6 bg-white border-[#ea580c] border-4 rounded-xl p-8 transition-transform duration-300 md:hover:scale-105">
+        <div className="flex flex-col justify-center gap-y-6 bg-white border-[#ea580c] border-4 rounded-xl p-8 transform transition-transform duration-300 hover:scale-105">
           <h1 className="font-oswald text-center text-3xl font-bold italic text-[#ea580c] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
             ABOUT US
           </h1>
@@ -35,7 +37,7 @@ export default function About() {
         </div>
 
         {/* WHO CAN ATTEND Section */}
-        <div className="flex flex-col justify-center gap-y-6 bg-white border-[#ea580c] border-4 rounded-xl p-8 transition-transform duration-300 md:hover:scale-105">
+        <div className="flex flex-col justify-center gap-y-6 bg-white border-[#ea580c] border-4 rounded-xl p-8 transform transition-transform duration-300 hover:scale-105">
           <h1 className="font-oswald text-center text-3xl font-bold italic text-[#ea580c] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
             WHO CAN ATTEND?
           </h1>
@@ -51,40 +53,45 @@ export default function About() {
 
       {/* Celebrating 10 Years Section */}
       <div className="container mx-auto mt-16 grid grid-cols-1 gap-y-16 md:grid-cols-1">
-        <div className="flex flex-col justify-center gap-y-10 bg-white border-[#ea580c] border-4 rounded-xl p-8 transition-transform duration-300 md:hover:scale-105">
+        <div className="flex flex-col justify-center gap-y-10 bg-white border-[#ea580c] border-4 rounded-xl p-8 transform transition-transform duration-300 hover:scale-105">
           <h1 className="font-oswald text-center text-3xl font-bold italic text-[#ea580c] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
             CELEBRATING 10 YEARS 
             <br /> 
             OF ROWDYHACKS
           </h1>
 
-          {/* Accordion for "See more / See less" */}
+          {/* Mobile: Truncated content with read more */}
           <div className="block md:hidden text-center font-mono text-lg font-bold text-[#ea580c]">
-            <p className="text-center font-mono text-lg font-bold text-[#ea580c]">
-            This year marks a significant milestone for RowdyHacks, as we celebrate 10 years of fostering creativity, collaboration, and mentorship right here at UTSA!
-            </p>
-            <Accordion type="single" collapsible>
-              <AccordionItem value="item-1">
-                <AccordionTrigger onClick={toggleAccordion}>
-                  {isExpanded ? "Read less" : "Read more"}
-                </AccordionTrigger>
-                <AccordionContent>
-                  <p className="text-center font-mono text-lg font-bold text-[#ea580c] md:text-center">
-                    Since our inception, RowdyHacks 
-                    has brought together students, developers, and tech enthusiasts from all walks of life to engage 
-                    in healthy competition, collaborate on innovative projects, and learn new skills they might not 
-                    encounter in a traditional classroom setting. Over the past decade, we've witnessed incredible growth. 
-                    We take pride in our inclusive community-building and empowering the next generation of tech leaders. 
-                    Together, we've created an ecosystem where innovation thrives, friendships are formed, and the future 
-                    is built, one hack at a time. As we celebrate this remarkable journey, we look forward to what the 
-                    next 10 years hold for RowdyHacks. Whether you've been with us from the start or are joining us for 
-                    the first time, let's make this milestone year one to remember. Let's hack, create, and shape the future—together!
-                  </p>
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
+            <Balancer>
+              {isExpanded ? (
+                <div ref={readMoreRef}> {/* Attach ref to the content to scroll into view */}
+                  This year marks a significant milestone for RowdyHacks, as we celebrate 10 years of fostering 
+                  creativity, collaboration, and mentorship right here at UTSA! Since our inception, RowdyHacks 
+                  has brought together students, developers, and tech enthusiasts from all walks of life to engage 
+                  in healthy competition, collaborate on innovative projects, and learn new skills they might not 
+                  encounter in a traditional classroom setting. Over the past decade, we've witnessed incredible growth. 
+                  We take pride in our inclusive community-building and empowering the next generation of tech leaders. 
+                  Together, we've created an ecosystem where innovation thrives, friendships are formed, and the future 
+                  is built, one hack at a time. As we celebrate this remarkable journey, we look forward to what the 
+                  next 10 years hold for RowdyHacks. Whether you've been with us from the start or are joining us for 
+                  the first time, let's make this milestone year one to remember. Let's hack, create, and shape the future—together!
+                </div>
+              ) : (
+                <>
+                  This year marks a significant milestone for RowdyHacks, as we celebrate 10 years of fostering creativity, 
+                  collaboration, and mentorship right here at UTSA! ...
+                </>
+              )}
+            </Balancer>
+            <button
+              onClick={toggleExpand}
+              className="text-sm font-mono font-bold text-[#ea580c] underline mt-4"
+            >
+              {isExpanded ? "read less" : "read more"}
+            </button>
           </div>
-          {/* Full text - Only show on medium and larger screens */}
+
+          {/* Desktop: Full content displayed */}
           <div className="hidden md:block text-center font-mono text-lg font-bold text-[#ea580c]">
             <Balancer>
               This year marks a significant milestone for RowdyHacks, as we celebrate 10 years of fostering 
@@ -99,6 +106,7 @@ export default function About() {
               the first time, let's make this milestone year one to remember. Let's hack, create, and shape the future—together!
             </Balancer>
           </div>
+
           <h2 className="text-center text-[#ea580c] font-mono font-bold">
             🧡 The RowdyHacks Team
           </h2>
