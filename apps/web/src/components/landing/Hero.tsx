@@ -5,27 +5,6 @@ import Link from "next/link";
 export default function Home() {
 	return (
 		<main className="relative flex h-screen w-screen flex-col items-center justify-center bg-[#1A3A9E]">
-			<div className="absolute left-0 top-0 h-screen w-screen overflow-hidden">
-				<WavyBackground
-					backgroundFill="#1A3A9E"
-					colors={[
-						"#1D41AE",
-						"#1A3A9E",
-						"#17338E",
-						"#1D41AE",
-						"#1A3A9E",
-						"#1D41AE",
-						"#1A3A9E",
-						"#17338E",
-						"#1D41AE",
-						"#1A3A9E",
-					]}
-					speed="fast"
-					waveOpacity={1}
-					waveWidth={300}
-					containerClassName="scale-x-125 scale-y-[2]"
-				/>
-			</div>
 			<div
 				className={`z-20 mx-4 flex flex-col items-center space-y-3 md:flex-row md:space-y-0`}
 			>

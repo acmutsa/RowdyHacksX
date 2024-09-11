@@ -12,6 +12,7 @@ import WorkWithUs from "@/components/landing/WorkWithUs";
 import TrailerSection from "@/components/landing/TrailerSection";
 import { Suspense } from "react";
 import { Skeleton } from "@/components/shadcn/ui/skeleton";
+import {WavyBackground} from "@/components/landing/WavyBackground";
 
 const oswald = Oswald({
 	variable: "--font-oswald",
@@ -25,13 +26,34 @@ export default function Home() {
 				<Navbar />
 			</Suspense>
 			<MLHBadge />
-			<main className="overflow-x-hidden">
-				<Hero />
-				<About />
+			<main className="overflow-x-hidden relative">
+				<div className="absolute left-0 top-0 h-full w-full">
+					<WavyBackground
+						backgroundFill="#1A3A9E"
+						colors={[
+							"#1D41AE",
+							"#1A3A9E",
+							"#17338E",
+							"#1D41AE",
+							"#1A3A9E",
+							"#1D41AE",
+							"#1A3A9E",
+							"#17338E",
+							"#1D41AE",
+							"#1A3A9E",
+						]}
+						speed="fast"
+						waveOpacity={1}
+						waveWidth={300}
+						containerClassName="scale-x-125 scale-y-[2]"
+					/>
+				</div>
+				<Hero/>
+				<About/>
 				{/* <Partners /> */}
-				<WorkWithUs />
-				<TrailerSection />
-				<Footer />
+				<WorkWithUs/>
+				<TrailerSection/>
+				<Footer/>
 			</main>
 		</div>
 	);
