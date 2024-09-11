@@ -27,7 +27,7 @@ export default function Home() {
 				<About />
 				<Partners />
 				<WorkWithUs />
-				<TrailerSection/>
+				<TrailerSection />
 				<Footer />
 			</main>
 		</div>
