@@ -3,12 +3,22 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { cookies } from "next/headers";
 import { Analytics } from "@vercel/analytics/react";
 import { defaultTheme } from "config";
+import localFont from "next/font/local";
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+const bttf = localFont({
+	src: "../../public/fonts/BTTF.ttf",
+	variable: "--font-bttf",
+});
+
+export default function RootLayout({
+	children,
+}: {
+	children: React.ReactNode;
+}) {
 	const theme = cookies().get("hk_theme")?.value || defaultTheme;
 	return (
 		<ClerkProvider>
-			<html lang="en">
+			<html lang="en" className={bttf.variable}>
 				<body className={theme === "dark" ? "dark" : ""}>
 					{children}
 					<Analytics />

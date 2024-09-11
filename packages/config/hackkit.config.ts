@@ -1,13 +1,12 @@
 export const defaultTheme = "dark";
 
 export default {
-	hackathonName: "Hackkit",
-	itteration: "Your Iteration",
+	hackathonName: "HackKit",
+	itteration: "Your Iteration Here",
 	siteUrl: "https://rowdyhacks.org", // Do not have a trailing slash
-	defaultMetaDataDescription:
-		"RowdyHacks is a free, weekend-long, overnight hackathon hosted at UTSA! Students can join us to network, code, collaborate, and compete. We welcome hackers from all disciplines, backgrounds, & technical levels!",
+	defaultMetaDataDescription: "Your Metadata Description Here",
 	botName: "HackKit",
-	botParticipantRole: "RH24 Participant",
+	botParticipantRole: "RH25 Participant",
 	hackathonTimezone: "America/Chicago",
 	localUniversityName: "The University of Texas at San Antonio",
 	localUniversityShortIDName: "ABC123",
@@ -61,7 +60,7 @@ export default {
 		facebook: "https://facebook.com/rowdyhacks",
 		twitter: "https://twitter.com/rowdyhacks",
 		github: "https://github.com/acmutsa",
-    guide: "https://go.rowdyhacks.org/discord",
+		guide: "https://go.rowdyhacks.org/discord",
 	},
 	icon: {
 		sm: "/img/logo/hackkit.svg",
@@ -75,6 +74,7 @@ export default {
 			Schedule: "/dash/schedule",
 			"Event Pass": "/dash/pass",
 			// Team: "/dash/team",
+			// Tickets: "/dash/tickets",
 		},
 		admin: {
 			Overview: "/admin",
@@ -101,7 +101,8 @@ export default {
 	maxProfilePhotoSizeInBytes: 3145728,
 	maxFileSizeInBytes: 4194304,
 	eventPassBgImage: "/img/dash/pass/bg.png",
-	noResumeProvidedURL: "https://static.acmutsa.org/No%20Resume%20Provided.pdf",
+	noResumeProvidedURL:
+		"https://static.acmutsa.org/No%20Resume%20Provided.pdf",
 	// Come in and change this date to whenever the hackathon starts
 	startDate: new Date(new Date(2024, 1, 24).setHours(9)),
 	prettyLocation: "Location of Hackathon",
@@ -144,15 +145,61 @@ export default {
 		},
 	},
 	maxTeamSize: 4,
+	featureFlags: {
+		core: {
+			requireUsersApproval: false,
+		},
+	},
+	footerLinkItems: {
+		resources: [
+			{ name: "Register", link: "/register" },
+			{ name: "FAQ", link: "/faq" },
+			{ name: "Code of Conduct", link: "/conduct" },
+			{ name: "Contact Us", link: "/contact" },
+			{ name: "ACM-W", link: "https://acmutsa.org/suborg_acmw" },
+			{ name: "ACM UTSA", link: "https://acmutsa.org/" },
+		],
+		links: [
+			{
+				name: "Open Source",
+				link: "https://github.com/acmutsa/CodeQuantum2023",
+			},
+		],
+		otherHackathons: [
+			{ name: "CodeQuantum", link: "https://cqhacks.org/" },
+			{ name: "RowdyDatathon", link: "https://www.rowdydatathon.org/" },
+			{ name: "TAMUHack", link: "https://tamuhack.com/" },
+			{ name: "WEHack", link: "https://wehackutd.com/" },
+			{ name: "HackUTD", link: "https://hackutd.co/" },
+			{ name: "HackTX", link: "https://hacktx.com/" },
+			{ name: "HackUNT", link: "https://unthackathon.com/#/" },
+			{ name: "HackUTA", link: "https://hackuta.org/" },
+			{ name: "Hacklahoma", link: "https://hacklahoma.org/" },
+		],
+	},
 } as const;
 
 // Its important that this is kept in sync with the database schema.
 
-export const perms = ["hacker", "volunteer", "mentor", "mlh", "admin", "super_admin"] as const;
+export const perms = [
+	"hacker",
+	"volunteer",
+	"mentor",
+	"mlh",
+	"admin",
+	"super_admin",
+] as const;
 
 // These are routes (pages) which do not require a account / authentication. They are used in the authMiddleware in middleware.ts. Be careful which routes you add here!
 
-export const publicRoutes = ["/", /^\/schedule(\/.*)?$/, /^\/@/, /^\/user\//, "/404", "/bugreport"];
+export const publicRoutes = [
+	"/",
+	/^\/schedule(\/.*)?$/,
+	/^\/@/,
+	/^\/user\//,
+	"/404",
+	"/bugreport",
+];
 
 // Generally it is reccomended to put your primary audience's university at the top of this list.
 
@@ -572,6 +619,8 @@ export const schools = [
 ] as const;
 
 export const majors = [
+	"Computer Science",
+	"Cyber Security",
 	"Accounting",
 	"Accounting Technician",
 	"Actuarial Science",
@@ -605,13 +654,11 @@ export const majors = [
 	"Computer & Information Sciences, General",
 	"Computer Engineering",
 	"Computer Networking/Telecommunications",
-	"Computer Science",
 	"Computer Software & Media Applications",
 	"Computer System Administration",
 	"Construction Engineering/Management",
 	"Creative Writing",
 	"Criminology",
-	"Cyber Security",
 	"Data Management Technology",
 	"Dental Assisting",
 	"Design & Visual Communications, General",
