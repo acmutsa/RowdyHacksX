@@ -7,8 +7,8 @@ export default function TrailerSection() {
                 <div className={"sm:w-[600px] lg:w-[1200px]"}>
                     <div className={"sm:h-[315px] lg:h-[630px]"}>
                         <iframe
-                            className={"rounded-lg border-blue-900 border-4 shadow-md w-full h-full"}
-                            src="https://www.youtube.com/embed/zKyUaKhMSgQ?si=b164z-0mBg7F7yKV"
+                            className={"rounded-lg border-black border-4 shadow-md w-full h-full"}
+                            src="https://www.youtube.com/embed/PYy2pXMuL4w?si=aRwACDtFnv9UalJF&rel=0"
                             title="YouTube video player" frameBorder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             referrerPolicy="strict-origin-when-cross-origin" allowFullScreen
