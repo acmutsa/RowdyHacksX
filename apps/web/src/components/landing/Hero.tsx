@@ -1,10 +1,9 @@
 import ShinyLogo from "./ShinyLogo";
-import { WavyBackground } from "./WavyBackground";
 import Link from "next/link";
 
 export default function Home() {
 	return (
-		<main className="relative flex h-screen w-screen flex-col items-center justify-center bg-[#1A3A9E]">
+		<main className="relative flex h-screen w-screen flex-col items-center justify-center">
 			<div
 				className={`z-20 mx-4 flex flex-col items-center space-y-3 md:flex-row md:space-y-0`}
 			>
