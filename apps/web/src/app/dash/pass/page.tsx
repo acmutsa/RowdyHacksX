@@ -72,15 +72,15 @@ function EventPass({ qrPayload, user, clerk, guild }: EventPassProps) {
 						</h3>
 					</div>
 				</div>
-				<div className="event-pass-img relative flex h-[45%] w-full items-end">
-					<div className="absolute left-1/2 top-1/2 aspect-square w-[200px] -translate-x-1/2 -translate-y-[65%] bg-hackathon opacity-60 blur-[50px] will-change-transform"></div>
+				<div className="event-pass-img relative flex h-full w-full items-end">
+					<div className="absolute left-1/2 top-1/2 aspect-square w-[200px] -translate-x-1/2 -translate-y-[65%] bg-slate-400 opacity-60 blur-[50px] will-change-transform"></div>
 					<Image
 						src={c.eventPassBgImage}
 						alt={""}
 						fill
-						className="no-select -translate-y-[15%] scale-[0.8] object-contain"
+						className="no-select -translate-y-[10%] scale-[0.5] object-contain"
 					/>
-					<div className="grid h-20 w-full grid-cols-2">
+					<div className="mx-6 grid h-20 w-full grid-cols-2">
 						<div className="flex h-full w-full items-center justify-start pl-2">
 							{/* <Image
 								src={c.icon.svg}
@@ -90,20 +90,20 @@ function EventPass({ qrPayload, user, clerk, guild }: EventPassProps) {
 							/> */}
 							<h1 className="text-md ml-1 font-bold leading-tight">
 								{c.hackathonName}{" "}
-								<span className="text-hackathon">
+								<span className="text-orange-400">
 									{c.itteration}
 								</span>
 							</h1>
 						</div>
-						<div className="flex h-full w-full flex-col items-end justify-center gap-y-1 pr-3">
-							<p className="font-mono text-xs">{`${format(
-								c.startDate,
-								"h:mma, MMM d, yyyy",
-							)}`}</p>
+						<div className="flex h-full w-full flex-col items-end justify-center gap-y-1">
 							<p className="font-mono text-xs">
 								{c.prettyLocation}
 							</p>
 						</div>
+						<p className="font-mono text-xs col-span-2 text-center">{`${format(
+							c.startDate,
+							"MMM d, yyyy @ h:mma",
+						)}`}</p>
 					</div>
 				</div>
 				<div className="flex h-[25%] w-full items-center justify-center border-dashed border-muted">
