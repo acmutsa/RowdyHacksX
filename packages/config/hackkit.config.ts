@@ -972,18 +972,10 @@ const publicRoutes = [
 	/^\/user\//,
 	"/404",
 	"/bugreport",
-	"/faq"
+	"/faq",
 ];
 
 // Generally it is reccomended to put your primary audience's university at the top of this list.
 
-
-
-
 export default c;
-export {
-	defaultTheme,
-	bucketResumeBaseUploadUrl,
-	perms,
-	publicRoutes,
-};
+export { defaultTheme, bucketResumeBaseUploadUrl, perms, publicRoutes };
