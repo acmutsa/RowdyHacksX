@@ -23,11 +23,8 @@ export default function About() {
 	}, [isExpanded]);
 
 	return (
-		<section
-			className="relative z-10 min-h-screen w-full bg-cover bg-no-repeat px-5 py-20"
-			id="About"
-		>
-			<div className="container mx-auto grid grid-cols-1 gap-x-10 gap-y-16 md:grid-cols-2">
+		<section className="flex min-h-screen w-full flex-col items-center justify-center" id="About">
+			<div className="container mx-auto grid grid-cols-1 gap-x-10 gap-y-8 py-4 md:grid-cols-2">
 				{/* ABOUT US Section */}
 				<div className="flex transform flex-col justify-center gap-y-6 rounded-xl border-4 border-[#ea580c] bg-white p-8 transition-transform duration-300 md-hover:scale-105">
 					<h1 className="text-center font-oswald text-3xl font-bold italic text-[#ea580c] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
