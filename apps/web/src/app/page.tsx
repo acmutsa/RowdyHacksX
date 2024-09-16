@@ -26,7 +26,7 @@ export default function Home() {
 				<Navbar />
 			</Suspense>
 			<MLHBadge />
-			<main className="relative flex min-h-full flex-col overflow-x-hidden">
+			<main className="relative flex min-h-full flex-col gap-16 overflow-x-hidden">
 				<div className="fixed inset-0 -z-10 h-screen w-screen overflow-hidden">
 					<WavyBackground
 						backgroundFill="#1A3A9E"

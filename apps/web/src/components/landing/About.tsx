@@ -24,7 +24,7 @@ export default function About() {
 
 	return (
 		<section
-			className="flex min-h-screen w-full flex-col items-center justify-center"
+			className="relative z-10 min-h-screen w-full bg-cover bg-no-repeat"
 			id="About"
 		>
 			<div className="container mx-auto grid grid-cols-1 gap-x-10 gap-y-8 py-4 md:grid-cols-2">
