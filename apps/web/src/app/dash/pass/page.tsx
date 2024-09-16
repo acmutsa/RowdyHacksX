@@ -80,8 +80,8 @@ function EventPass({ qrPayload, user, clerk, guild }: EventPassProps) {
 						fill
 						className="no-select -translate-y-[13%] scale-[0.5] object-contain"
 					/>
-					<div className="mx-6 grid h-20 w-full grid-cols-2">
-						<div className="flex h-full w-full items-center justify-start px-2">
+					<div className="mx-6 grid h-20 w-full grid-cols-2 gap-4">
+						<div className="flex h-full w-full items-center justify-start">
 							{/* <Image
 								src={c.icon.svg}
 								height={60}
@@ -109,7 +109,7 @@ function EventPass({ qrPayload, user, clerk, guild }: EventPassProps) {
 				<div className="flex h-[25%] w-full items-center justify-center border-dashed border-muted">
 					<Drawer>
 						<DrawerTrigger asChild>
-							<div className="flex aspect-square h-[90%] items-center justify-center overflow-x-hidden rounded-xl border-2 border-dashed border-muted p-1">
+							<div className="flex aspect-square h-[90%] items-center justify-center overflow-x-hidden rounded-xl border-2 border-muted p-2">
 								<QRCode
 									className="h-full"
 									bgColor="hsl(var(--background))"
@@ -118,7 +118,7 @@ function EventPass({ qrPayload, user, clerk, guild }: EventPassProps) {
 								/>
 							</div>
 						</DrawerTrigger>
-						<DrawerContent className="flex h-[90%] w-full items-center justify-center focus-visible:outline-none">
+						<DrawerContent className="flex h-full w-full items-center justify-center focus-visible:outline-none">
 							<QRCode
 								className="h-full"
 								bgColor="hsl(var(--background))"
