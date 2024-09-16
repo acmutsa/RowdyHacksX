@@ -51,7 +51,7 @@ function EventPass({ qrPayload, user, clerk, guild }: EventPassProps) {
 	return (
 		<div className="relative my-20 h-max">
 			<div className="absolute left-1/2 top-0 z-10 h-[75px] w-[75px] -translate-x-1/2 -translate-y-[50%] rotate-45 rounded-full border-2 border-background border-b-muted border-r-muted bg-background dark:border" />
-			<div className="flex aspect-[9/17] !max-h-[calc(100vh-7rem)] w-full max-w-[400px] flex-col overflow-hidden rounded-3xl border-2 border-muted bg-background py-[37.5px] dark:border">
+			<div className="flex aspect-[8/17] !max-h-[calc(100vh-7rem)] w-full max-w-[400px] flex-col overflow-hidden rounded-3xl border-2 border-muted bg-background py-[37.5px] dark:border">
 				<div className="relative flex h-[30%] w-full flex-col items-center pt-2">
 					<Image
 						src={clerk.imageUrl}
@@ -78,7 +78,7 @@ function EventPass({ qrPayload, user, clerk, guild }: EventPassProps) {
 						src={c.eventPassBgImage}
 						alt={""}
 						fill
-						className="no-select -translate-y-[10%] scale-[0.5] object-contain"
+						className="no-select -translate-y-[12%] scale-[0.55] object-contain"
 					/>
 					<div className="mx-6 grid h-20 w-full grid-cols-2">
 						<div className="flex h-full w-full items-center justify-start pl-2">
