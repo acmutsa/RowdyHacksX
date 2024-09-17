@@ -106,7 +106,7 @@ function EventPass({ qrPayload, user, clerk, guild }: EventPassProps) {
 						)}`}</p>
 					</div>
 				</div>
-				<div className="flex h-40 w-full items-center justify-center border-dashed border-muted">
+				<div className="flex h-36 w-full items-center justify-center border-dashed border-muted">
 					<Drawer>
 						<DrawerTrigger asChild>
 							<div className="flex aspect-square h-[90%] items-center justify-center overflow-x-hidden rounded-xl border-2 border-muted p-2">
@@ -118,7 +118,7 @@ function EventPass({ qrPayload, user, clerk, guild }: EventPassProps) {
 								/>
 							</div>
 						</DrawerTrigger>
-						<DrawerContent className="flex h-full w-full items-center justify-center focus-visible:outline-none">
+						<DrawerContent className="flex h-[90%] w-full items-center justify-center focus-visible:outline-none">
 							<QRCode
 								className="h-full"
 								bgColor="hsl(var(--background))"
