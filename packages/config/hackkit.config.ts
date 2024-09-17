@@ -862,8 +862,8 @@ const c = {
 	},
 	icon: {
 		sm: "/img/logo/rhbttf.svg",
-		md: "/img/logo/rhbttf-md.png",
-		lg: "/img/logo/rhbttf-lg.png",
+		md: "/img/logo/hackkit-md.png",
+		lg: "/img/logo/hackkit-lg.png",
 		svg: "/img/logo/rhbttf.svg",
 	},
 	dashPaths: {
