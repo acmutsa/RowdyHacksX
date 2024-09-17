@@ -51,7 +51,7 @@ function EventPass({ qrPayload, user, clerk, guild }: EventPassProps) {
 	return (
 		<div className="relative my-20 h-max">
 			<div className="absolute left-1/2 top-0 z-10 h-[75px] w-[75px] -translate-x-1/2 -translate-y-[50%] rotate-45 rounded-full border-2 border-background border-b-muted border-r-muted bg-background dark:border" />
-			<div className="min-w-[min(100vw-5rem,350px)] flex aspect-[9/17] !max-h-[calc(100vh-7rem)] w-full max-w-[500px] flex-col overflow-hidden rounded-3xl border-2 border-muted bg-background py-[37.5px] dark:border">
+			<div className="flex aspect-[9/17] !max-h-[calc(100vh-7rem)] w-full min-w-[min(100vw-5rem,350px)] max-w-[500px] flex-col overflow-hidden rounded-3xl border-2 border-muted bg-background py-[37.5px] dark:border">
 				<div className="relative flex min-h-fit w-full flex-col items-center pt-2">
 					<Image
 						src={clerk.imageUrl}
@@ -74,7 +74,7 @@ function EventPass({ qrPayload, user, clerk, guild }: EventPassProps) {
 				</div>
 				<div className="event-pass-img relative flex h-full w-full flex-col items-center justify-evenly">
 					<div className="absolute left-1/2 top-1/2 aspect-square w-[200px] -translate-x-1/2 -translate-y-[65%] bg-slate-400 opacity-60 blur-[50px] will-change-transform"></div>
-					<div className="relative flex h-full md:h-3/4 w-full items-center justify-center">
+					<div className="relative flex w-full items-center justify-center h-3/4">
 						<Image
 							src={c.eventPassBgImage}
 							alt={""}
@@ -83,7 +83,7 @@ function EventPass({ qrPayload, user, clerk, guild }: EventPassProps) {
 						/>
 					</div>
 					<div className="mx-6 grid min-h-fit w-full grid-cols-2 gap-2">
-						<div className="flex h-full w-full items-center justify-center col-span-2">
+						<div className="flex h-full w-full items-start justify-center">
 							<h1 className="text-md ml-1 font-bold leading-tight">
 								{c.hackathonName}{" "}
 								<span className="text-orange-400">
@@ -91,15 +91,15 @@ function EventPass({ qrPayload, user, clerk, guild }: EventPassProps) {
 								</span>
 							</h1>
 						</div>
-						<div className="flex h-full w-full flex-col items-center justify-center gap-y-1 col-span-2">
-							<h1 className="font-bold">
+						<div className="flex h-full w-full flex-col items-end justify-center gap-y-1 pr-3">
+							<p className="font-mono text-xs">{`${format(
+								c.startDate,
+								"h:mma, MMM d, yyyy",
+							)}`}</p>
+							<p className="font-mono text-xs">
 								{c.prettyLocation}
-							</h1>
+							</p>
 						</div>
-						<h1 className="col-span-2 text-center font-bold">{`${format(
-							c.startDate,
-							"MMM d, yyyy @ h:mma",
-						)}`}</h1>
 					</div>
 				</div>
 				<div className="flex h-36 w-full items-center justify-center border-dashed border-muted">
