@@ -23,7 +23,7 @@ export default async function Navbar({ className }: NavbarProps) {
 		<div className="z-50 w-screen">
 			<div
 				className={cn(
-					`relative top-0 z-50 h-16 w-screen border-b border-b-border bg-nav ${oswald.variable}`,
+					`relative top-0 z-50 h-16 w-screen border-b border-b-border bg-nav bg-white dark:bg-black ${oswald.variable}`,
 					className,
 				)}
 			>

@@ -16,9 +16,12 @@ export default function Home() {
 					{"&future>"}
 				</h1>
 			</div>
-			<p className="z-20 mx-2 mb-6 text-center font-mono text-xl font-bold italic text-orange-400 md:mx-0 xl:mb-8 2xl:text-3xl">
+			<p className="z-20 mx-2 text-center font-mono text-xl font-bold italic text-orange-400 md:mx-0 mb-4 2xl:text-3xl">
 				October 26th - 27th 2024
 			</p>
+			<h1 className="w-full md:text-lg text-center font-mono text-orange-400">
+				SAN PEDRO I, UTSA
+			</h1>
 			<div className="relative w-full duration-150 ease-in-out hover:scale-125">
 				<Link href={"/register"}>
 					<div className="relative mx-auto my-10 max-w-[250px] lg:max-w-[475px]">
@@ -31,7 +34,6 @@ export default function Home() {
 					</div>
 				</Link>
 			</div>
-			<Overlay />
 		</main>
 	);
 }
@@ -40,12 +42,7 @@ function Overlay() {
 	return (
 		<div className="pointer-events-none fixed left-0 top-0 z-50 h-full w-screen select-none p-5 pt-16">
 			<div className="relative h-full w-full">
-				{/* Start Corners */}
-				{/* <div className="absolute left-0 top-0 h-[15px] w-[15px] border-l-2 border-t-2 border-orange-400"/>
-				<div className="absolute right-0 top-0 h-[15px] w-[15px] border-r-2 border-t-2 border-orange-400"/>
-				<div className="absolute bottom-0 left-0 h-[15px] w-[15px] border-b-2 border-l-2 border-orange-400"/>
-				<div className="absolute bottom-0 right-0 h-[15px] w-[15px] border-b-2 border-r-2 border-orange-400"/> */}
-				{/* End Corners */}
+
 				<p className="absolute bottom-0 left-0 w-full text-center font-mono text-orange-400">
 					ROWDYHACKS X · SAN PEDRO I, UTSA
 				</p>
