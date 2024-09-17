@@ -74,7 +74,7 @@ function EventPass({ qrPayload, user, clerk, guild }: EventPassProps) {
 				</div>
 				<div className="event-pass-img relative flex h-full w-full flex-col items-center justify-evenly">
 					<div className="absolute left-1/2 top-1/2 aspect-square w-[200px] -translate-x-1/2 -translate-y-[65%] bg-slate-400 opacity-60 blur-[50px] will-change-transform"></div>
-					<div className="relative flex h-full w-full items-center justify-center">
+					<div className="relative flex h-full md:h-3/4 w-full items-center justify-center">
 						<Image
 							src={c.eventPassBgImage}
 							alt={""}
@@ -82,8 +82,8 @@ function EventPass({ qrPayload, user, clerk, guild }: EventPassProps) {
 							className="no-select z-50 scale-[0.8] object-contain"
 						/>
 					</div>
-					<div className="mx-6 grid h-20 w-[90%] grid-cols-2 gap-4">
-						<div className="flex h-full w-full items-center justify-start">
+					<div className="mx-6 grid min-h-fit w-full grid-cols-2 gap-2">
+						<div className="flex h-full w-full items-center justify-center col-span-2">
 							<h1 className="text-md ml-1 font-bold leading-tight">
 								{c.hackathonName}{" "}
 								<span className="text-orange-400">
@@ -91,15 +91,15 @@ function EventPass({ qrPayload, user, clerk, guild }: EventPassProps) {
 								</span>
 							</h1>
 						</div>
-						<div className="flex h-full w-full flex-col items-end justify-center gap-y-1">
-							<p className="font-mono text-xs">
+						<div className="flex h-full w-full flex-col items-center justify-center gap-y-1 col-span-2">
+							<h1 className="font-bold">
 								{c.prettyLocation}
-							</p>
+							</h1>
 						</div>
-						<p className="col-span-2 text-center font-mono text-xs">{`${format(
+						<h1 className="col-span-2 text-center font-bold">{`${format(
 							c.startDate,
 							"MMM d, yyyy @ h:mma",
-						)}`}</p>
+						)}`}</h1>
 					</div>
 				</div>
 				<div className="flex h-36 w-full items-center justify-center border-dashed border-muted">
