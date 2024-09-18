@@ -31,6 +31,7 @@ export default function Home() {
 							</h2>
 						</div>
 						<div className="register-clip absolute mx-auto flex h-[64px] w-full max-w-[500px] translate-y-2 items-center justify-center bg-orange-400 hover:cursor-pointer"></div>
+						<div className="register-clip absolute mx-auto flex h-[64px] w-full max-w-[500px] translate-y-2 items-center justify-center bg-orange-400 hover:cursor-pointer"></div>
 					</div>
 				</Link>
 			</div>
