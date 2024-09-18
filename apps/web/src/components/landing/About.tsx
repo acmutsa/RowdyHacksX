@@ -72,7 +72,6 @@ export default function About() {
 					<div className="block text-center font-mono text-lg font-bold text-[#ea580c] md:hidden">
 						{/* Animation for scrolling. Has to have exact heights so it knows where to animate to and from*/}
 						<Balancer
-							className={`transition-all duration-300 ${isExpanded ? "max-h-[2250px]" : "max-h-[330px]"} overflow-hidden`}
 						>
 							<>
 								{isExpanded
