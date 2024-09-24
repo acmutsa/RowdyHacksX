@@ -65,9 +65,12 @@ function Github({ fillColor }: { fillColor: string }) {
 }
 
 export default function TeamMember({ person }: { person: Person }) {
+	// Front and back images
+	const frontImage = "/img/logo/hackkit-md.png";
+	const backImage = "/img/logo/rhbttf.png"; // Change this to the actual image you want to show on flip
 	// Edit the max width and height and then set the height to auto in the styling
-	const [src, setSrc] = useState(person.photo);
 	const [isFlipped, setIsFlipped] = useState(false);
+	const [src, setSrc] = useState(frontImage);
 	const [styling, setStyling] = useState(
 		"max-w-[110px] md:max-w-[140px] lg:max-w-[160px] 2xl:max-w-[200px] h-auto rounded-lg",
 	);
@@ -75,78 +78,124 @@ export default function TeamMember({ person }: { person: Person }) {
 	const FallBackStyling =
 		"max-w-[105px] md:max-w-[132px] lg:max-w-[150px] xl:max-w-[151px] 2xl:max-w-[188px] rounded-lg";
 
-	// Front and back images
-	const frontImage = "/img/logo/hackkit-md.png";
-	const backImage = "/img/logo/rhbttf.png"; // Change this to the actual image you want to show on flip
 
-	return (
-		<Card
-			className={`flex w-full items-center justify-center ${oswald.className} border-transparent bg-transparent bg-[#ea580c] text-[#FEF2E6] shadow-none duration-300 hover:scale-[1.15]`}
-		>
-			<div className="text-[#FEF2E6]">
-				<CardHeader className="items-center">
-					<CardTitle className="text-xl sm:text-2xl md:text-xl 2xl:text-3xl">
-						<h1 className="font-bold">{`${person.fname}\u00A0${person.lname}`}</h1>
-					</CardTitle>
-					<CardDescription>
-						<h2 className="text-sm text-[#FEF2E6]">
-							{person.role}
-						</h2>
-					</CardDescription>
-				</CardHeader>
-				<CardContent className="flex items-center justify-center">
-					{/* Front/Back image flipping logic */}
-					<div
-						onClick={() => setIsFlipped(!isFlipped)}
-						className="cursor-pointer"
-					>
-						<Image
-							width={300}
-							height={300}
-							src={isFlipped ? backImage : frontImage}
-							className={`${styling}`}
-							quality={100}
-							priority={true}
-							alt="Person Placeholder"
-							onError={() => {
-								setSrc("/img/logo/rhbttf.png");
-								setStyling(FallBackStyling);
-							}}
-						/>
-					</div>
-				</CardContent>
-				<CardFooter>
-					<div className="flex h-full w-full items-baseline justify-center gap-3">
-						<a
+		return (
+			<div
+			  className={`w-64 mx-auto transform-gpu transition-transform duration-500 ${
+				isFlipped ? "rotate-y-180" : ""
+			  }`}
+			  onClick={() => setIsFlipped(!isFlipped)}
+			>
+			  <Card
+				className={`flex items-center justify-center ${oswald.className} border-transparent bg-transparent bg-[#ea580c] text-[#FEF2E6] shadow-none`}
+			  >
+				{/* Container for front and back */}
+				<div className="w-full h-full flex flex-col">
+				  {/* Front of the card */}
+				  <div
+					className={`w-full h-full flex-shrink-0 ${
+					  isFlipped ? "hidden" : "flex flex-col"
+					}`}
+				  >
+					<CardHeader className="items-center">
+					  <CardTitle className="text-xl sm:text-2xl md:text-xl 2xl:text-3xl">
+						<h1 className="font-bold">
+						  {`${person.fname}\u00A0${person.lname}`}
+						</h1>
+					  </CardTitle>
+					  <CardDescription>
+						<h2 className="text-sm text-[#FEF2E6]">{person.role}</h2>
+					  </CardDescription>
+					</CardHeader>
+					<CardContent className="flex items-center justify-center">
+					  <Image
+						width={300}
+						height={300}
+						src={src}
+						className={`${styling}`}
+						quality={100}
+						priority={true}
+						alt="Person Placeholder"
+						onError={() => {
+						  setSrc("/img/logo/rhbttf.png");
+						  setStyling(FallBackStyling);
+						}}
+					  />
+					</CardContent>
+					<CardFooter>
+					  <div className="flex h-full w-full items-baseline justify-center gap-3">
+						{person.linkedin && (
+						  <a
 							href={person.linkedin}
 							target="_blank"
-							className={person.linkedin ? "" : "hidden"}
-						>
+							rel="noopener noreferrer"
+						  >
 							<div className="size-8">
-								<LinkedIn fillColor="fill-gray-400" />
+							  <LinkedIn fillColor="fill-gray-400" />
 							</div>
-						</a>
-						<a
+						  </a>
+						)}
+						{person.website && (
+						  <a
 							href={person.website}
 							target="_blank"
-							className={person.website ? "" : "hidden"}
-						>
+							rel="noopener noreferrer"
+						  >
 							<div className="size-8">
-								<Website fillColor="fill-gray-400" />
+							  <Website fillColor="fill-gray-400" />
 							</div>
-						</a>
-						<a
+						  </a>
+						)}
+						{person.github && (
+						  <a
 							href={person.github}
 							target="_blank"
-							className={person.github ? "" : "hidden"}
-						>
+							rel="noopener noreferrer"
+						  >
 							<div className="size-8">
-								<Github fillColor="fill-gray-400" />
+							  <Github fillColor="fill-gray-400" />
 							</div>
-						</a>
-					</div>
-				</CardFooter>
+						  </a>
+						)}
+					  </div>
+					</CardFooter>
+				  </div>
+		  
+				  {/* Back of the card */}
+				  <div
+					className={`w-full h-full flex-shrink-0 ${
+					  isFlipped ? "flex flex-col" : "hidden"
+					}`}
+				  >
+					<CardHeader className="items-center">
+					  <CardTitle className="text-xl sm:text-2xl md:text-xl 2xl:text-3xl">
+						<h1 className="font-bold">
+						  {`${person.fname}\u00A0${person.lname}`}
+						</h1>
+					  </CardTitle>
+					</CardHeader>
+					<CardContent className="flex items-center justify-center">
+					  <Image
+						width={300}
+						height={300}
+						src={backImage}
+						className={`${styling}`}
+						quality={100}
+						priority={true}
+						alt="Back Image"
+						onError={() => {
+						  setSrc("/img/logo/rhbttf.png");
+						  setStyling(FallBackStyling);
+						}}
+					  />
+					</CardContent>
+				  </div>
+				</div>
+			  </Card>
 			</div>
-		</Card>
-	);
-}
+		  );
+		  
+};
+
+	
+

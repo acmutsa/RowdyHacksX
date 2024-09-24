@@ -91,14 +91,13 @@ const MobileTeam = () => {
 		<>
 			{data_rendered ? (
 				<div className="flex w-full flex-col items-center justify-center md:hidden">
-					<div className="no-scrollbar grid w-[85%] grid-flow-col grid-rows-2 overflow-x-auto overflow-y-hidden">
+					<div className="no-scrollbar grid w-[85%] grid-flow-col grid-rows-1 overflow-x-auto overflow-y-hidden">
 						{team.map((p, index) => (
 							<TeamMember person={p} key={index} />
 						))}
 					</div>
 					<div className="flex w-full items-center justify-center">
 						<h1 className="[@media (min-width)] pr-3 text-xl text-[#FEF2E6] sm:pr-5 sm:text-2xl">
-							More Organizers
 						</h1>
 						<ArrowRight
 							className="arrow_animate h-8 w-8 self-center pt-1 sm:h-10 sm:w-10"
