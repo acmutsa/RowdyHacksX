@@ -13,6 +13,7 @@ import { Oswald } from "next/font/google";
 import Image from "next/image";
 import { useState } from "react";
 import c from "config";
+
 const oswald = Oswald({
 	variable: "--font-oswald",
 	subsets: ["latin"],
@@ -65,14 +66,18 @@ function Github({ fillColor }: { fillColor: string }) {
 
 export default function TeamMember({ person }: { person: Person }) {
 	// Edit the max width and height and then set the height to auto in the styling
-
-	const [src, setSrc] = useState(person.imgLink);
+	const [src, setSrc] = useState(person.photo);
+	const [isFlipped, setIsFlipped] = useState(false);
 	const [styling, setStyling] = useState(
 		"max-w-[110px] md:max-w-[140px] lg:max-w-[160px] 2xl:max-w-[200px] h-auto rounded-lg",
 	);
 
 	const FallBackStyling =
 		"max-w-[105px] md:max-w-[132px] lg:max-w-[150px] xl:max-w-[151px] 2xl:max-w-[188px] rounded-lg";
+
+	// Front and back images
+	const frontImage = "/img/logo/hackkit-md.png";
+	const backImage = "/img/logo/rhbttf.png"; // Change this to the actual image you want to show on flip
 
 	return (
 		<Card
@@ -90,34 +95,35 @@ export default function TeamMember({ person }: { person: Person }) {
 					</CardDescription>
 				</CardHeader>
 				<CardContent className="flex items-center justify-center">
-					{/* This also needs to be fixed */}
-					<Image
-						width={300}
-						height={300}
-						src={src}
-						className={`${styling}`}
-						quality={100}
-						priority={true}
-						alt="Person Placeholder"
-						onError={(e) => {
-							setSrc(`${c.icon.svg}`);
-							setStyling(FallBackStyling);
-						}}
-					/>
+					{/* Front/Back image flipping logic */}
+					<div
+						onClick={() => setIsFlipped(!isFlipped)}
+						className="cursor-pointer"
+					>
+						<Image
+							width={300}
+							height={300}
+							src={isFlipped ? backImage : frontImage}
+							className={`${styling}`}
+							quality={100}
+							priority={true}
+							alt="Person Placeholder"
+							onError={() => {
+								setSrc("/img/logo/rhbttf.png");
+								setStyling(FallBackStyling);
+							}}
+						/>
+					</div>
 				</CardContent>
 				<CardFooter>
-					<div
-						className={
-							"flex h-full w-full items-baseline justify-center gap-3"
-						}
-					>
+					<div className="flex h-full w-full items-baseline justify-center gap-3">
 						<a
 							href={person.linkedin}
 							target="_blank"
 							className={person.linkedin ? "" : "hidden"}
 						>
-							<div className={"size-8"}>
-								<LinkedIn fillColor={"fill-gray-400"} />
+							<div className="size-8">
+								<LinkedIn fillColor="fill-gray-400" />
 							</div>
 						</a>
 						<a
@@ -125,8 +131,8 @@ export default function TeamMember({ person }: { person: Person }) {
 							target="_blank"
 							className={person.website ? "" : "hidden"}
 						>
-							<div className={"size-8"}>
-								<Website fillColor={"fill-gray-400"} />
+							<div className="size-8">
+								<Website fillColor="fill-gray-400" />
 							</div>
 						</a>
 						<a
@@ -134,8 +140,8 @@ export default function TeamMember({ person }: { person: Person }) {
 							target="_blank"
 							className={person.github ? "" : "hidden"}
 						>
-							<div className={"size-8"}>
-								<Github fillColor={"fill-gray-400"} />
+							<div className="size-8">
+								<Github fillColor="fill-gray-400" />
 							</div>
 						</a>
 					</div>

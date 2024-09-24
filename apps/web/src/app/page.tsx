@@ -6,13 +6,13 @@ import About from "@/components/landing/About";
 import Partners from "@/components/landing/Partners";
 import Footer from "@/components/landing/Footer";
 import MLHBadge from "@/components/landing/MLHBadge";
-
+import Team from "@/components/landing/Team";
 import { Oswald } from "next/font/google";
 import WorkWithUs from "@/components/landing/WorkWithUs";
 import TrailerSection from "@/components/landing/TrailerSection";
 import { Suspense } from "react";
 import { Skeleton } from "@/components/shadcn/ui/skeleton";
-import {WavyBackground} from "@/components/landing/WavyBackground";
+import { WavyBackground } from "@/components/landing/WavyBackground";
 
 const oswald = Oswald({
 	variable: "--font-oswald",
@@ -54,6 +54,7 @@ export default function Home() {
 				<About />
 				{/* <Partners /> */}
 				<WorkWithUs />
+				<Team />
 				<TrailerSection />
 				<Footer />
 			</main>
