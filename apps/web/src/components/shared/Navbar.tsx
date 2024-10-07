@@ -5,11 +5,12 @@ import { Button } from "../shadcn/ui/button";
 import ProfileButton from "./ProfileButton";
 import { auth, currentUser } from "@clerk/nextjs";
 import NavBarLinksGrouper from "./NavBarLinksGrouper";
-import { Oswald } from "next/font/google";
+import { Open_Sans } from "next/font/google";
 import { cn } from "@/lib/utils/client/cn";
+import { getUser } from "db/functions";
 
-const oswald = Oswald({
-	variable: "--font-oswald",
+const openSans = Open_Sans({
+	variable: "--font-open-sans",
 	subsets: ["latin"],
 });
 
@@ -19,11 +20,13 @@ interface NavbarProps {
 
 export default async function Navbar({ className }: NavbarProps) {
 	const user = await currentUser();
+	const registrationIsComplete =
+		user != null && (await getUser(user.id)) != undefined;
 	return (
-		<div className="z-50 w-screen bg-white dark:bg-black">
+		<div className="z-50 w-screen">
 			<div
 				className={cn(
-					`relative top-0 z-50 h-16 w-screen border-b border-b-border bg-nav ${oswald.variable}`,
+					`relative top-0 z-50 h-16 w-screen border-b border-b-border bg-nav bg-white dark:bg-black ${openSans.variable}`,
 					className,
 				)}
 			>
@@ -40,7 +43,9 @@ export default async function Navbar({ className }: NavbarProps) {
 								height={32}
 							/>
 							{/* <div className="bg-muted-foreground h-[45%] rotate-[25deg] w-[2px]" /> */}
-							<h2 className="font-oswald text-lg font-bold text-[#A7866A] dark:text-[#FEF2E6]">
+							<h2
+								className={`text-lg font-bold text-[#A7866A] dark:text-[#FEF2E6] ${openSans.variable}`}
+							>
 								{c.hackathonName}
 							</h2>
 						</Link>
@@ -55,8 +60,7 @@ export default async function Navbar({ className }: NavbarProps) {
 								<>
 									<Link
 										href={
-											user.publicMetadata
-												.registrationComplete
+											registrationIsComplete
 												? "/dash"
 												: "/register"
 										}
@@ -65,8 +69,7 @@ export default async function Navbar({ className }: NavbarProps) {
 											variant={"outline"}
 											className="bg-nav hover:bg-background"
 										>
-											{user.publicMetadata
-												.registrationComplete
+											{registrationIsComplete
 												? "Dashboard"
 												: "Complete Registration"}
 										</Button>

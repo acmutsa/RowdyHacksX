@@ -796,14 +796,14 @@ const c = {
 		resources: [
 			{ name: "Register", link: "/register" },
 			{ name: "FAQ", link: "/faq" },
-			{ name: "Code of Conduct", link: "/conduct" },
+			{ name: "Code of Conduct", link: "https://go.rowdyhacks.org/coc" },
 			{ name: "Contact Us", link: "/contact" },
 			{ name: "ACM-W", link: "https://acmutsa.org/suborg_acmw" },
 			{ name: "ACM UTSA", link: "https://acmutsa.org/" },
 		],
 		links: [
 			{
-				name: "Open Source",
+				name: "Source Code",
 				link: "https://github.com/acmutsa/HackKit",
 			},
 		],
@@ -902,7 +902,7 @@ const c = {
 		"https://static.acmutsa.org/No%20Resume%20Provided.pdf",
 	// Come in and change this date to whenever the hackathon starts
 	startDate: new Date(new Date(2024, 9, 26).setHours(9)),
-	prettyLocation: "UTSA San Pedro I",
+	prettyLocation: "San Pedro I, UTSA",
 	roleBadges: {
 		hacker: {
 			title: "Hacker",
