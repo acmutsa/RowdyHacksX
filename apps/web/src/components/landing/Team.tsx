@@ -13,6 +13,7 @@ import teamData from "./team.json"; // Importing the JSON data directly
 import { Oswald } from "next/font/google";
 import Autoplay from "embla-carousel-autoplay";
 import { ArrowRight } from "lucide-react";
+import TeamCard from "@/components/landing/Card";
 
 const oswald = Oswald({
 	variable: "--font-oswald",
@@ -56,9 +57,10 @@ const CarouselDefault = () => {
 						{team.map((p, index) => (
 							<CarouselItem
 								key={index}
-								className="pl-1 md:basis-1/3 lg:basis-1/4 2xl:basis-1/5"
+								// className="pl-1 md:basis-1/3 lg:basis-1/4 2xl:basis-1/5"
 							>
-								<TeamMember person={p} />
+								{/*<TeamMember person={p} />*/}
+								<TeamCard/>
 							</CarouselItem>
 						))}
 					</CarouselContent>
