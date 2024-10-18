@@ -13,7 +13,6 @@ import TrailerSection from "@/components/landing/TrailerSection";
 import { Suspense } from "react";
 import { Skeleton } from "@/components/shadcn/ui/skeleton";
 import { WavyBackground } from "@/components/landing/WavyBackground";
-import TeamCard from "@/components/landing/Card";
 
 const oswald = Oswald({
 	variable: "--font-oswald",
@@ -51,17 +50,13 @@ export default function Home() {
 						containerClassName="scale-x-125 scale-y-[2] h-full"
 					/>
 				</div>
-				<Hero />
-				<About />
+				<Hero/>
+				<About/>
 				{/* <Partners /> */}
-				<WorkWithUs />
-				<div className={"grid grid-cols-4 inset-0"}>
-					<TeamCard/>
-					<TeamCard/>
-				</div>
-				{/*<Team />*/}
-				<TrailerSection />
-				<Footer />
+				<WorkWithUs/>
+				<Team />
+				<TrailerSection/>
+				<Footer/>
 			</main>
 		</div>
 	);
