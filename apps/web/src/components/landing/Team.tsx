@@ -29,14 +29,13 @@ const CarouselDefault = () => {
 	useEffect(() => {
 		setLoading(true);
 		axios.get<Team>("/team.json").then((res) => {
-			setTeam(res.data.team)
-		})
+			setTeam(res.data.team);
+		});
 		setLoading(false);
 	}, []);
 
-
-	if (loading || team === undefined) return <div>Loading...</div>
-	if (team.length === 0) return <div>No team members found.</div>
+	if (loading || team === undefined) return <div>Loading...</div>;
+	if (team.length === 0) return <div>No team members found.</div>;
 
 	return (
 		<>
@@ -45,20 +44,22 @@ const CarouselDefault = () => {
 				plugins={[plugin.current]}
 				onMouseEnter={plugin.current.stop}
 				onMouseLeave={plugin.current.reset}
-				className={"w-full flex flex-row max-w-fit"}
+				className={"flex w-full max-w-fit flex-row"}
 			>
 				<CarouselContent className={"-ml-1"}>
 					{team.map((p, index) => (
 						<CarouselItem
 							key={index}
-							className={"pl-1 min-h-[450px] basis-1/4 min-w-[450px]"}
+							className={
+								"min-h-[450px] min-w-[450px] basis-1/4 pl-1"
+							}
 						>
-							<TeamCard person={p}/>
+							<TeamCard person={p} />
 						</CarouselItem>
 					))}
 				</CarouselContent>
-				<CarouselPrevious className="border-none bg-transparent hover:cursor-pointer mx-12" />
-				<CarouselNext className="border-none bg-transparent hover:cursor-pointer mx-12" />
+				<CarouselPrevious className="mx-12 border-none bg-transparent hover:cursor-pointer" />
+				<CarouselNext className="mx-12 border-none bg-transparent hover:cursor-pointer" />
 			</Carousel>
 		</>
 	);

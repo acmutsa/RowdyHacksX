@@ -83,9 +83,12 @@ module.exports = {
 				bttf: ["var(--font-bttf)"],
 			},
 			fontSize: {
-				'1.5xl': ['1.375rem', {
-					lineHeight: '1.75rem',
-				}],
+				"1.5xl": [
+					"1.375rem",
+					{
+						lineHeight: "1.75rem",
+					},
+				],
 			},
 		},
 	},

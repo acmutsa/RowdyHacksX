@@ -50,13 +50,13 @@ export default function Home() {
 						containerClassName="scale-x-125 scale-y-[2] h-full"
 					/>
 				</div>
-				<Hero/>
-				<About/>
+				<Hero />
+				<About />
 				{/* <Partners /> */}
-				<WorkWithUs/>
+				<WorkWithUs />
 				<Team />
-				<TrailerSection/>
-				<Footer/>
+				<TrailerSection />
+				<Footer />
 			</main>
 		</div>
 	);
