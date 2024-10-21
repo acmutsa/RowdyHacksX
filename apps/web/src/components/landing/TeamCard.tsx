@@ -64,7 +64,8 @@ export default function TeamCard({ person }: TeamCardProps) {
 			textColor = "white";
 			break;
 		case "Outreach":
-			borderColor = "linear-gradient(to bottom right, #161D6F, #0B2F9F, #161D6F)";
+			borderColor =
+				"linear-gradient(to bottom right, #161D6F, #0B2F9F, #161D6F)";
 			mainColor = "#98DED9";
 			glowColor = "#C7FFD8";
 			textColor = "white";
