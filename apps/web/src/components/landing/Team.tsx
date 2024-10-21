@@ -58,8 +58,8 @@ const CarouselDefault = () => {
 						</CarouselItem>
 					))}
 				</CarouselContent>
-				<CarouselPrevious className="mx-12 border-none hover:cursor-pointer" />
-				<CarouselNext className="mx-12 border-none hover:cursor-pointer" />
+				<CarouselPrevious className="mx-16 mt-[-24px] border-none hover:cursor-pointer" />
+				<CarouselNext className="mx-16 mt-[-24px] border-none hover:cursor-pointer" />
 			</Carousel>
 		</>
 	);

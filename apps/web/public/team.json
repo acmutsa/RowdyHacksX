@@ -65,7 +65,7 @@
       "nameSize": 2,
       "team": "Logistics / PR",
       "professionalPicture": {
-        "link": "/img/team/professional/natasha-blussick.jpeg",
+        "link": "/img/team/professional/natasha-blussick.jpg",
         "zoom": 1.4,
         "x": 0,
         "y": -10
@@ -151,10 +151,10 @@
         "y": 8
       },
       "personalityPicture": {
-        "link": "/img/team/personality/vivian-tran.png",
-        "zoom": 2.1,
-        "x": -10,
-        "y": 78
+        "link": "/img/team/personality/vivian-tran.jpg",
+        "zoom": 2.3,
+        "x": -80,
+        "y": 90
       },
       "linkedin": "https://www.linkedin.com/in/vivtratx/",
       "github": "",
@@ -222,7 +222,7 @@
     },
     {
       "name": "Alessandro Espinosa",
-      "nameSize": 1.5,
+      "nameSize": 1.8,
       "team": "Media",
       "professionalPicture": {
         "link": "/img/team/professional/alessandro-espinosa.jpg",
@@ -311,10 +311,10 @@
         "y": 10
       },
       "personalityPicture": {
-        "link": "/img/team/personality/sean-jauregui.jpeg",
-        "zoom": 1.25,
-        "x": 0,
-        "y": 10
+        "link": "/img/team/personality/sean-jauregui.jpg",
+        "zoom": 2.35,
+        "x": -33,
+        "y": 90
       },
       "linkedin": "https://www.linkedin.com/in/seanjauregui",
       "github": "",
