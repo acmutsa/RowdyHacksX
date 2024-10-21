@@ -51,15 +51,15 @@ const CarouselDefault = () => {
 						<CarouselItem
 							key={index}
 							className={
-								"min-h-[450px] min-w-[450px] basis-1/4 pl-1"
+								"min-h-[450px] min-w-[450px] basis-1/4 xl:basis-1/6 pl-1"
 							}
 						>
 							<TeamCard person={p} />
 						</CarouselItem>
 					))}
 				</CarouselContent>
-				<CarouselPrevious className="mx-12 border-none bg-transparent hover:cursor-pointer" />
-				<CarouselNext className="mx-12 border-none bg-transparent hover:cursor-pointer" />
+				<CarouselPrevious className="mx-12 border-none hover:cursor-pointer" />
+				<CarouselNext className="mx-12 border-none hover:cursor-pointer" />
 			</Carousel>
 		</>
 	);

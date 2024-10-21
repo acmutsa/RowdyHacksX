@@ -396,7 +396,7 @@
         "x": 0,
         "y": 10
       },
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/alesia-tonegari-436aa72b0?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
       "github": "",
       "personal": ""
     },
@@ -518,6 +518,26 @@
       },
       "linkedin": "",
       "github": "",
+      "personal": ""
+    },
+    {
+      "name": "Eddie Ortiz",
+      "nameSize": 3,
+      "team": "Outreach",
+      "professionalPicture": {
+        "link": "/img/team/professional/eddie-ortiz.jpeg",
+        "zoom": 1.3,
+        "x": 0,
+        "y": 0
+      },
+      "personalityPicture": {
+        "link": "/img/team/personality/eddie-ortiz.jpeg",
+        "zoom": 1,
+        "x": 0,
+        "y": 0
+      },
+      "linkedin": "http://linkedin.com/in/joseortiz-jeo",
+      "github": "https://github.com/Buffet936",
       "personal": ""
     }
   ]
