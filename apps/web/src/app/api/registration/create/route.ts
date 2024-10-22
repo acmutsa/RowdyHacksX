@@ -38,19 +38,6 @@ export async function POST(req: Request) {
 		);
 	}
 
-	if (user.publicMetadata.registrationComplete) {
-		console.log("already registered");
-		return NextResponse.json(
-			{
-				success: false,
-				message: "You are already registered.",
-			},
-			{ status: 400 },
-		);
-	}
-
-	// TODO: Might be removable? Not sure if this is needed. In every case, the sure should have a piece of metadata that says if they are registered or not.
-
 	const lookupByUserID = await getUser(user.id);
 
 	if (lookupByUserID) {
@@ -104,9 +91,9 @@ export async function POST(req: Request) {
 			skills: body.skills.map((v) => v.text.toLowerCase()),
 			profilePhoto: user.imageUrl,
 			isFullyRegistered: true,
-			phoneNumber:body.phoneNumber,
+			phoneNumber: body.phoneNumber,
 			isSearchable: body.profileIsSearchable,
-			countryOfResidence:body.countryOfResidence,
+			countryOfResidence: body.countryOfResidence,
 		});
 
 		await tx.insert(userHackerData).values({
@@ -127,13 +114,6 @@ export async function POST(req: Request) {
 			hasSharedDataWithMLH: body.hasSharedDataWithMLH,
 			isEmailable: body.isEmailable,
 		});
-	});
-
-	clerkClient.users.updateUser(user.id, {
-		publicMetadata: {
-			...user.publicMetadata,
-			registrationComplete: true,
-		},
 	});
 
 	// sendEmail({

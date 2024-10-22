@@ -558,6 +558,7 @@ const dietaryRestrictionOptions = [
 ];
 
 const countries = [
+	{ name: "United States", code: "US" },
 	{ name: "Afghanistan", code: "AF" },
 	{ name: "Albania", code: "AL" },
 	{ name: "Algeria", code: "DZ" },
@@ -740,7 +741,6 @@ const countries = [
 	{ name: "Ukraine", code: "UA" },
 	{ name: "United Arab Emirates", code: "AE" },
 	{ name: "United Kingdom", code: "GB" },
-	{ name: "United States", code: "US" },
 	{ name: "Uruguay", code: "UY" },
 	{ name: "Uzbekistan", code: "UZ" },
 	{ name: "Vanuatu", code: "VU" },
@@ -774,11 +774,11 @@ const raceOptions = [
 ];
 
 const c = {
-	hackathonName: "HackKit",
-	itteration: "I",
+	hackathonName: "RowdyHacks",
+	itteration: "X",
 	siteUrl: "https://rowdyhacks.org", // Do not have a trailing slash
 	defaultMetaDataDescription: "Your Metadata Description Here",
-	botName: "HackKit",
+	botName: "RowdyBot",
 	botParticipantRole: "Participant",
 	hackathonTimezone: "America/Chicago",
 	localUniversityName: schools[0],
@@ -796,15 +796,15 @@ const c = {
 		resources: [
 			{ name: "Register", link: "/register" },
 			{ name: "FAQ", link: "/faq" },
-			{ name: "Code of Conduct", link: "/conduct" },
+			{ name: "Code of Conduct", link: "https://go.rowdyhacks.org/coc" },
 			{ name: "Contact Us", link: "/contact" },
 			{ name: "ACM-W", link: "https://acmutsa.org/suborg_acmw" },
 			{ name: "ACM UTSA", link: "https://acmutsa.org/" },
 		],
 		links: [
 			{
-				name: "Open Source",
-				link: "https://github.com/acmutsa/CodeQuantum2023",
+				name: "Source Code",
+				link: "https://github.com/acmutsa/HackKit",
 			},
 		],
 		otherHackathons: [
@@ -821,34 +821,34 @@ const c = {
 	},
 	groups: {
 		"Guild A | Group A": {
-			discordRole: "Guild A Role",
+			discordRole: "Doc Brown",
 		},
 		"Guild A | Group B": {
-			discordRole: "Guild A Role",
+			discordRole: "Doc Brown",
 		},
 		"Guild B | Group A": {
-			discordRole: "Guild B Role",
+			discordRole: "Marty",
 		},
 		"Guild B | Group B": {
-			discordRole: "Guild B Role",
+			discordRole: "Marty",
 		},
 		"Guild C | Group A": {
-			discordRole: "Guild C Role	",
+			discordRole: "Dr. Who",
 		},
 		"Guild C | Group B": {
-			discordRole: "Guild C Role",
+			discordRole: "Dr. Who",
 		},
 		"Guild D | Group A": {
-			discordRole: "Guild D Role",
+			discordRole: "Terminator",
 		},
 		"Guild D | Group B": {
-			discordRole: "Guild D Role",
+			discordRole: "Terminator",
 		},
 		"Guild E | Group A": {
-			discordRole: "Guild E Role",
+			discordRole: "Mr. Peabody and Sherman",
 		},
 		"Guild E | Group B": {
-			discordRole: "Guild E Role",
+			discordRole: "Mr. Peabody and Sherman",
 		},
 	},
 	issueEmail: "team@rowdyhacks.org",
@@ -861,10 +861,10 @@ const c = {
 		guide: "https://go.rowdyhacks.org/discord",
 	},
 	icon: {
-		sm: "/img/logo/hackkit.svg",
+		sm: "/img/logo/rhbttf.svg",
 		md: "/img/logo/hackkit-md.png",
 		lg: "/img/logo/hackkit-lg.png",
-		svg: "/img/logo/hackkit.svg",
+		svg: "/img/logo/rhbttf.svg",
 	},
 	dashPaths: {
 		dash: {
@@ -878,11 +878,10 @@ const c = {
 			Overview: "/admin",
 			Users: "/admin/users",
 			Events: "/admin/events",
-			Points: "/admin/points",
-			"Check-in": "/admin/check-in",
+			// Points: "/admin/points",
+			"Hackathon Check-in": "/admin/check-in",
 			Toggles: "/admin/toggles",
 		},
-		// TODO: Can remove days? Pretty sure they're dynamic now.
 	},
 	eventTypes: {
 		Meal: "#FFC107",
@@ -892,18 +891,18 @@ const c = {
 		Other: "#795548",
 	},
 	days: {
-		Saturday: new Date(2023, 6, 15),
+		Saturday: new Date(2024, 10, 26),
 	},
-	Sunday: new Date(2023, 6, 16),
+	Sunday: new Date(2024, 10, 27),
 	maxResumeSizeInBytes: 4194304,
 	maxProfilePhotoSizeInBytes: 3145728,
 	maxFileSizeInBytes: 4194304,
-	eventPassBgImage: "/img/dash/pass/bg.png",
+	eventPassBgImage: "/img/logo/rhbttf.svg",
 	noResumeProvidedURL:
 		"https://static.acmutsa.org/No%20Resume%20Provided.pdf",
 	// Come in and change this date to whenever the hackathon starts
-	startDate: new Date(new Date(2024, 1, 24).setHours(9)),
-	prettyLocation: "Location of Hackathon",
+	startDate: new Date(new Date(2024, 9, 26).setHours(9)),
+	prettyLocation: "San Pedro I, UTSA",
 	roleBadges: {
 		hacker: {
 			title: "Hacker",
@@ -973,17 +972,8 @@ const publicRoutes = [
 	/^\/user\//,
 	"/404",
 	"/bugreport",
+	"/faq",
 ];
 
-// Generally it is reccomended to put your primary audience's university at the top of this list.
-
-
-
-
 export default c;
-export {
-	defaultTheme,
-	bucketResumeBaseUploadUrl,
-	perms,
-	publicRoutes,
-};
+export { defaultTheme, bucketResumeBaseUploadUrl, perms, publicRoutes };
