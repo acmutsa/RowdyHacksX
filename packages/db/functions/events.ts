@@ -20,7 +20,6 @@ export function getAllEvents(options?: getAllEventsOptions) {
 	const orderByClause = options?.descending
 		? [desc(events.startTime)]
 		: [asc(events.startTime)];
-
 	return db.query.events.findMany({
 		orderBy: orderByClause,
 	});
