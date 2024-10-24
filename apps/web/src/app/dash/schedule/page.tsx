@@ -13,7 +13,7 @@ export default async function Page() {
 
 	const currentEvent = sched.filter((e) => {
 		const currentTime = new Date();
-		return !(e.startTime < currentTime && e.endTime > currentTime);
+		return e.startTime < currentTime && e.endTime > currentTime;
 	})[0];
 	const userTimeZoneHeaderKey = headers().get(VERCEL_IP_TIMEZONE_HEADER_KEY);
 	const userTimeZone = getClientTimeZone(userTimeZoneHeaderKey);
