@@ -28,17 +28,24 @@ export default async function Page() {
 					<div>
 						<p>
 							{currentEvent?.title || "No current events"}{" "}
-							<Badge
-								variant={"outline"}
-								className="h-fit"
-								style={{
-									borderColor: (
-										c.eventTypes as Record<string, string>
-									)[currentEvent?.type],
-								}}
-							>
-								<p className="text-sm">{currentEvent.type}</p>
-							</Badge>
+							{currentEvent && (
+								<Badge
+									variant={"outline"}
+									className="h-fit"
+									style={{
+										borderColor: (
+											c.eventTypes as Record<
+												string,
+												string
+											>
+										)[currentEvent?.type],
+									}}
+								>
+									<p className="text-sm">
+										{currentEvent?.type}
+									</p>
+								</Badge>
+							)}
 						</p>
 					</div>
 				</div>
