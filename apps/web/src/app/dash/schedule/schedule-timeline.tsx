@@ -105,7 +105,7 @@ export function EventRow({ event, userTimeZone }: EventRowProps) {
 	return (
 		<Link href={href} legacyBehavior>
 			<tr className="md:py-none cursor-pointer py-24 text-center text-xl text-foreground">
-				<td className="pr-4 text-base md:pr-16 md:text-sm">{`${startTimeFormatted} - ${endTimeFormatted}`}</td>
+				<td className="pr-4 text-sm md:pr-16 md:text-xl">{`${startTimeFormatted} - ${endTimeFormatted}`}</td>
 				<td
 					className={"relative h-20 w-1"}
 					style={{
