@@ -58,8 +58,7 @@ export default function ScheduleTimeline({
 										}}
 									></td>
 									<td>
-										<h2 className="ml-8 w-full border-b py-4 text-4xl font-black md:text-6xl md:ml-16">
-
+										<h2 className="ml-8 w-full border-b py-4 text-4xl font-black md:ml-16 md:text-6xl">
 											{dayName}
 										</h2>
 									</td>
@@ -105,8 +104,8 @@ export function EventRow({ event, userTimeZone }: EventRowProps) {
 	const color = (c.eventTypes as Record<string, string>)[event.type];
 	return (
 		<Link href={href} legacyBehavior>
-			<tr className="cursor-pointer text-center text-xl text-foreground">
-				<td className="pr-8 md:pr-16">{`${startTimeFormatted} - ${endTimeFormatted}`}</td>
+			<tr className="py-none cursor-pointer text-center text-xl text-foreground md:py-8">
+				<td className="pr-8 text-base md:pr-16 md:text-sm">{`${startTimeFormatted} - ${endTimeFormatted}`}</td>
 				<td
 					className={"relative h-20 w-1"}
 					style={{
@@ -134,7 +133,7 @@ export function EventRow({ event, userTimeZone }: EventRowProps) {
 						</div>
 					)}
 				</td>
-				<td className="pl-16">
+				<td className="pl-8 md:pl-16">
 					<div className="flex flex-wrap items-center justify-start gap-x-2 text-left text-3xl">
 						{event.title}{" "}
 						<Badge
