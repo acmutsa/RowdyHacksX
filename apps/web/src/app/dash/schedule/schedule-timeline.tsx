@@ -104,7 +104,7 @@ export function EventRow({ event, userTimeZone }: EventRowProps) {
 	const color = (c.eventTypes as Record<string, string>)[event.type];
 	return (
 		<Link href={href} legacyBehavior>
-			<tr className="py-none cursor-pointer text-center text-xl text-foreground md:py-8">
+			<tr className="md:py-none cursor-pointer py-24 text-center text-xl text-foreground">
 				<td className="pr-8 text-base md:pr-16 md:text-sm">{`${startTimeFormatted} - ${endTimeFormatted}`}</td>
 				<td
 					className={"relative h-20 w-1"}
@@ -134,7 +134,7 @@ export function EventRow({ event, userTimeZone }: EventRowProps) {
 					)}
 				</td>
 				<td className="pl-8 md:pl-16">
-					<div className="flex flex-wrap items-center justify-start gap-x-2 text-left text-3xl">
+					<div className="md:py-none flex flex-wrap items-center justify-start gap-x-2 py-4 text-left text-3xl">
 						{event.title}{" "}
 						<Badge
 							variant={"outline"}
