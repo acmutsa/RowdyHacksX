@@ -858,7 +858,7 @@ const c = {
 		facebook: "https://facebook.com/rowdyhacks",
 		twitter: "https://twitter.com/rowdyhacks",
 		github: "https://github.com/acmutsa",
-		guide: "https://go.rowdyhacks.org/discord",
+		guide: "https://guide.rowdyhacks.org",
 	},
 	icon: {
 		sm: "/img/logo/rhbttf.svg",
