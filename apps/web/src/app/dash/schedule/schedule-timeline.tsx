@@ -39,7 +39,7 @@ export default function ScheduleTimeline({
 	timezone,
 }: ScheduleTimelineProps) {
 	return (
-		<div className="w-7/8 mx-auto mt-5 sm:w-3/4">
+		<div className="mx-auto mt-5 w-11/12 md:w-3/4">
 			<table className="p-4">
 				<tbody>
 					{Array.from(splitByDay(schedule).entries()).map(
@@ -58,7 +58,7 @@ export default function ScheduleTimeline({
 										}}
 									></td>
 									<td>
-										<h2 className="ml-8 w-full border-b py-4 text-4xl font-black md:ml-16 md:text-6xl">
+										<h2 className="ml-4 w-full py-4 text-4xl font-black md:ml-16 md:border-b md:text-6xl">
 											{dayName}
 										</h2>
 									</td>
@@ -105,7 +105,7 @@ export function EventRow({ event, userTimeZone }: EventRowProps) {
 	return (
 		<Link href={href} legacyBehavior>
 			<tr className="md:py-none cursor-pointer py-24 text-center text-xl text-foreground">
-				<td className="pr-8 text-base md:pr-16 md:text-sm">{`${startTimeFormatted} - ${endTimeFormatted}`}</td>
+				<td className="pr-4 text-base md:pr-16 md:text-sm">{`${startTimeFormatted} - ${endTimeFormatted}`}</td>
 				<td
 					className={"relative h-20 w-1"}
 					style={{
@@ -133,7 +133,7 @@ export function EventRow({ event, userTimeZone }: EventRowProps) {
 						</div>
 					)}
 				</td>
-				<td className="pl-8 md:pl-16">
+				<td className="pl-4 md:pl-16">
 					<div className="md:py-none flex flex-wrap items-center justify-start gap-x-2 py-4 text-left text-3xl">
 						{event.title}{" "}
 						<Badge
