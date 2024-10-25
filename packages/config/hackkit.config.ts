@@ -804,7 +804,7 @@ const c = {
 		links: [
 			{
 				name: "Source Code",
-				link: "https://github.com/acmutsa/HackKit",
+				link: "https://github.com/acmutsa/RowdyHacksX",
 			},
 		],
 		otherHackathons: [
@@ -858,7 +858,7 @@ const c = {
 		facebook: "https://facebook.com/rowdyhacks",
 		twitter: "https://twitter.com/rowdyhacks",
 		github: "https://github.com/acmutsa",
-		guide: "https://go.rowdyhacks.org/discord",
+		guide: "http://guide.rowdyhacks.org/",
 	},
 	icon: {
 		sm: "/img/logo/rhbttf.svg",
