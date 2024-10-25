@@ -173,7 +173,7 @@ export default async function ProfileButton() {
 							Report a Bug
 						</DropdownMenuItem>
 					</Link>
-					<Link href={"/settings/account"}>
+					<Link href={"/settings"}>
 						<DropdownMenuItem className="cursor-pointer">
 							Settings
 						</DropdownMenuItem>

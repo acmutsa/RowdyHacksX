@@ -216,7 +216,7 @@ export const updateProfileImage = authenticatedAction
 				.update(userCommonData)
 				.set({ profilePhoto: blobUpload.url })
 				.where(eq(userCommonData.clerkID, user.clerkID));
-			revalidatePath("/settings/profile");
+			revalidatePath("/settings#profile");
 			return { success: true };
 		},
 	);
