@@ -63,7 +63,7 @@ function EventPass({ qrPayload, user, clerk, guild }: EventPassProps) {
 					<h1 className="mt-2 text-center text-4xl font-bold">
 						{user.firstName}
 					</h1>
-					<div className="flex w-full items-center justify-center space-x-5">
+					<div className="flex w-full flex-col items-center justify-center space-y-3 pt-2">
 						<h3 className="text-center font-mono text-sm">
 							@{user.hackerTag}
 						</h3>

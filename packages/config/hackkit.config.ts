@@ -804,7 +804,7 @@ const c = {
 		links: [
 			{
 				name: "Source Code",
-				link: "https://github.com/acmutsa/HackKit",
+				link: "https://github.com/acmutsa/RowdyHacksX",
 			},
 		],
 		otherHackathons: [
