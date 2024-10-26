@@ -973,6 +973,9 @@ const publicRoutes = [
 	"/404",
 	"/bugreport",
 	"/faq",
+	"/live",
+	"/live/overlay",
+	"/api/live/announcement",
 ];
 
 export default c;
