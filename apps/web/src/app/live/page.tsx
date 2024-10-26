@@ -1,16 +1,43 @@
-export default function LivePage() {
-    return (
-        <>
-            <div style={{backgroundImage: "linear-gradient(to bottom right, #EA580C, #FDE047, #EA580C"}}>
-                <iframe width="0" height="0"
-                        src="https://www.youtube.com/embed/jfKfPfyJRdk?si=9Gi9Tp5NjCYAhtbU&amp;controls=0"
-                        title="YouTube video player" frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerPolicy="strict-origin-when-cross-origin" allowFullScreen
-                        className={"h-dvh w-full border-8 border-transparent"}
-                />
-            </div>
+"use client";
+import React, { useEffect, useRef } from 'react';
+import Hls from 'hls.js';
 
-        </>
-    )
-}
+export default function LivePage() {
+
+    const streamUrl = "https://82934cf9c8696bd2.mediapackage.us-east-1.amazonaws.com/out/v1/0909ac7915bf450da5267c52f49797cb/index.m3u8"
+
+    const videoRef = useRef(null);
+
+    useEffect(() => {
+        // Initialize HLS only if supported
+        if (Hls.isSupported()) {
+            const hls = new Hls();
+            hls.loadSource(streamUrl);
+            hls.attachMedia(videoRef.current);
+
+            hls.on(Hls.Events.MANIFEST_PARSED, () => {
+                videoRef.current.play();
+            });
+
+            return () => {
+                hls.destroy();
+            };
+        } else if (videoRef.current.canPlayType('application/vnd.apple.mpegurl')) {
+            // For Safari browsers where HLS is natively supported
+            videoRef.current.src = streamUrl;
+            videoRef.current.play();
+        }
+    }, [streamUrl]);
+
+    return (
+        <div>
+            <video
+                ref={videoRef}
+                controls
+                width="1920"
+                height="1080"
+                style={{ maxWidth: '100%' }}
+            />
+        </div>
+    );
+};
