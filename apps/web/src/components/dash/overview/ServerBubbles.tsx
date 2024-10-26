@@ -36,7 +36,7 @@ export function TitleBubble() {
 					{c.hackathonName}
 				</h1> */}
 				<h1 className="bg-gradient-to-b from-orange-600 via-yellow-300 to-orange-600 bg-clip-text font-bttf text-4xl text-transparent sm:text-7xl lg:text-5xl xl:text-6xl">
-					{"RowdyHacks"}
+					{"rowdyhacks"}
 				</h1>
 				<h2 className="text-center font-mono text-xs text-orange-500 sm:text-base">
 					{`${format(c.startDate, "h:mma, MMM d, yyyy")}`} @{" "}
