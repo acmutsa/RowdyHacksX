@@ -54,7 +54,7 @@ export function Countdown({ title, date }: CountdownProps) {
 				</div>
 			</div>
 			<div className="pt-5">
-				<Badge variant={"outline"} className="border-hackathon">
+				<Badge variant={"outline"} className="border-orange-500">
 					Time To {title}
 				</Badge>
 			</div>
