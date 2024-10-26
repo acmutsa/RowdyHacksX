@@ -975,7 +975,7 @@ const publicRoutes = [
 	"/faq",
 	"/live",
 	"/live/overlay",
-	"/api/live/announcement"
+	"/api/live/announcement",
 ];
 
 export default c;
