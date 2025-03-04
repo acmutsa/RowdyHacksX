@@ -1,9 +1,19 @@
-import { sql } from "@vercel/postgres";
-import { drizzle } from "drizzle-orm/vercel-postgres";
-// import { migrate } from "drizzle-orm/vercel-postgres/migrator";
+import { drizzle } from "drizzle-orm/libsql";
+import { createClient as createClientEdge } from "@libsql/client/web";
+import { createClient as createClientNodeServerless } from "@libsql/client";
 import * as schema from "./schema";
 
 export * from "drizzle-orm";
-export const db = drizzle(sql, { schema });
+export * as zod from "./zod";
+const tursoEdge = createClientEdge({
+	url: process.env.TURSO_DATABASE_URL!,
+	authToken: process.env.TURSO_AUTH_TOKEN,
+});
 
-// await migrate(db, { migrationsFolder: "../../drizzle" });
+const tursoNodeServerless = createClientNodeServerless({
+	url: process.env.TURSO_DATABASE_URL!,
+	authToken: process.env.TURSO_AUTH_TOKEN,
+});
+
+export const db = drizzle(tursoEdge, { schema });
+export const dbNodeServerless = drizzle(tursoNodeServerless, { schema });

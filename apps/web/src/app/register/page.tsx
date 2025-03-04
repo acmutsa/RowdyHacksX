@@ -4,7 +4,7 @@ import { auth, currentUser } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
 import Navbar from "@/components/shared/Navbar";
 import Link from "next/link";
-import { kv } from "@vercel/kv";
+import { redisMGet } from "@/lib/utils/server/redis";
 import { parseRedisBoolean } from "@/lib/utils/server/redis";
 import { Button } from "@/components/shadcn/ui/button";
 import { getUser } from "db/functions";
@@ -22,7 +22,7 @@ export default async function Page() {
 	const [defaultRegistrationEnabled, defaultSecretRegistrationEnabled]: (
 		| string
 		| null
-	)[] = await kv.mget(
+	)[] = await redisMGet(
 		"config:registration:registrationEnabled",
 		"config:registration:secretRegistrationEnabled",
 	);
@@ -31,7 +31,7 @@ export default async function Page() {
 		return (
 			<>
 				<Navbar />
-				<main className="dark:bg-zinc-950">
+				<main className="overflow-x-hidden dark:bg-zinc-950">
 					<div className="mx-auto min-h-screen max-w-5xl px-5 pb-10 pt-[20vh] font-sans dark:text-white">
 						<h1 className="text-6xl font-black md:text-8xl">
 							Register
@@ -63,7 +63,6 @@ export default async function Page() {
 		<main className="flex min-h-screen flex-col items-center justify-center px-2">
 			<div className="max-w-screen fixed left-1/2 top-[calc(50%+7rem)] h-[40vh] w-[800px] -translate-x-1/2 -translate-y-1/2 scale-150 overflow-x-hidden bg-hackathon opacity-30 blur-[100px] will-change-transform" />
 			<h2 className="text-4xl font-extrabold">{c.hackathonName}</h2>
-			{/* Why is this not a component? This same code is in here and insideo of sign-up */}
 			<h1 className="mb-10 pb-5 text-6xl font-extrabold text-hackathon dark:bg-gradient-to-t dark:from-hackathon/80 dark:to-white dark:bg-clip-text dark:text-transparent md:text-8xl">
 				Registration
 			</h1>
