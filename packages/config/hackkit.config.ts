@@ -964,8 +964,6 @@ const c = {
 	// Come in and change this date to whenever the hackathon starts
 	startDate: new Date(new Date(2024, 9, 26).setHours(9)),
 	prettyLocation: "San Pedro I, UTSA",
-	startDate: new Date(new Date(2024, 9, 26).setHours(9)),
-	prettyLocation: "San Pedro I, UTSA",
 	roleBadges: {
 		hacker: {
 			title: "Hacker",

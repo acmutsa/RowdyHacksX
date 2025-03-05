@@ -81,7 +81,7 @@ export default function EditEventForm({
 			host,
 			startTime,
 			points,
-			location,
+			location: location ?? "TBD",
 			endTime,
 		},
 	});

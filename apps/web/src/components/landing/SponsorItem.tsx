@@ -1,6 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Partner } from "@/lib/utils/shared/types";
+type Partner = {
+	name: string;
+	logo: string;
+	url: string;
+	tier: string;
+};
 
 const capitalize = (input: string) =>
 	input.charAt(0).toUpperCase() + input.slice(1);
@@ -14,7 +19,7 @@ const tierColorMap = {
 } as const;
 
 export function SponsorItem({ name, logo, tier, url }: Partner) {
-	const textColor = tierColorMap[tier];
+	const textColor = tierColorMap[tier as keyof typeof tierColorMap];
 	const isTitle = tier === "title";
 
 	return (

@@ -1,7 +1,11 @@
 import { SponsorItem } from "./SponsorItem";
-import { Partner } from "@/lib/utils/shared/types";
 import partners from "./partners.json";
-
+type Partner = {
+	name: string;
+	logo: string;
+	url: string;
+	tier: string;
+};
 export async function Sponsors() {
 	const partnerList: Partner[] = partners.partners as Partner[];
 

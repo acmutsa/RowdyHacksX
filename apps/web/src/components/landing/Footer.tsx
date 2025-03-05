@@ -31,15 +31,6 @@ export default function Footer() {
 					/>
 				))}
 				<div className="col-span-2 flex flex-col gap-y-3 justify-self-center lg:col-span-1">
-					<Link href="https://vercel.com">
-						<Image
-							className="select-none"
-							src="/img/powered-by-vercel.svg"
-							alt="Powered by Vercel"
-							width={200}
-							height={10}
-						/>
-					</Link>
 					<Link href="https://github.com/acmutsa/HackKit">
 						<ManagedByHackkit />
 					</Link>

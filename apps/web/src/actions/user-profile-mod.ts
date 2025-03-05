@@ -4,7 +4,6 @@ import { authenticatedAction } from "@/lib/safe-action";
 import { z } from "zod";
 import { db } from "db";
 import { userCommonData, userHackerData } from "db/schema";
-import { userCommonData, userHackerData } from "db/schema";
 import { eq } from "db/drizzle";
 import { del } from "@vercel/blob";
 import { decodeBase64AsFile } from "@/lib/utils/shared/files";
