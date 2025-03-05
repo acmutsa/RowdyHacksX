@@ -79,15 +79,20 @@ async function migratePostgresSqLite() {
 		// run bucket mover updates here
 	}
 
-	console.log("Migrated Users ✅");
+	console.log("Migrated Users ✅\n\n");
 
 	console.log("Migrating Hacker Data 🧑‍💻");
 
 	if (allUserHackerData.length > 0) {
-		await db.insert(schema.userHackerData).values(allUserHackerData);
+		// we need to filter our data to ensure that we do not have any repeating clerkIDs
+		const filteredHackerData = allUserHackerData.filter(
+			(value, index, self) =>
+				self.findIndex((t) => t.clerkID === value.clerkID) === index && allUserCommonData.find((t) => t.clerkID === value.clerkID) != null
+		);
+		await db.insert(schema.userHackerData).values(filteredHackerData);
 	}
 
-	console.log("Migrated Hacker Data ✅");
+	console.log("Migrated Hacker Data ✅\n\n");
 
 	console.log("Migrating Events 📅");
 
@@ -95,7 +100,7 @@ async function migratePostgresSqLite() {
 		await db.insert(schema.events).values(allEvents);
 	}
 
-	console.log("Migrated Events ✅");
+	console.log("Migrated Events ✅\n\n");
 
 	console.log("Migrating Files 📁");
 
@@ -104,7 +109,7 @@ async function migratePostgresSqLite() {
 		await db.insert(schema.files).values(allFiles);
 	}
 
-	console.log("Migrated Files ✅");
+	console.log("Migrated Files ✅\n\n");
 
 	console.log("Migrating Scans 📡");
 
@@ -112,7 +117,7 @@ async function migratePostgresSqLite() {
 		await db.insert(schema.scans).values(allScans);
 	}
 
-	console.log("Migrated Scans ✅");
+	console.log("Migrated Scans ✅\n\n");
 
 	console.log("Migrating Teams 🏆");
 
@@ -120,7 +125,7 @@ async function migratePostgresSqLite() {
 		await db.insert(schema.teams).values(allTeams);
 	}
 
-	console.log("Migrated Teams ✅");
+	console.log("Migrated Teams ✅\n\n");
 
 	console.log("Migrating Invites 💌");
 
@@ -128,7 +133,7 @@ async function migratePostgresSqLite() {
 		await db.insert(schema.invites).values(allInvites);
 	}
 
-	console.log("Migrated Invites ✅");
+	console.log("Migrated Invites ✅\n\n");
 
 	console.log("Migrating Error Logs 📝");
 
@@ -136,7 +141,7 @@ async function migratePostgresSqLite() {
 		await db.insert(schema.errorLog).values(allErrorLogs);
 	}
 
-	console.log("Migrated Error Logs ✅");
+	console.log("Migrated Error Logs ✅\n\n");
 
 	console.log("Migrating Discord Verification 🤖");
 
@@ -146,7 +151,7 @@ async function migratePostgresSqLite() {
 			.values(alldiscordVerification);
 	}
 
-	console.log("Migrated Discord Verification ✅");
+	console.log("Migrated Discord Verification ✅\n\n");
 
 	console.log("Migrating Tickets 🎫");
 
@@ -154,7 +159,7 @@ async function migratePostgresSqLite() {
 		await db.insert(schema.tickets).values(allTickets);
 	}
 
-	console.log("Migrated Tickets ✅");
+	console.log("Migrated Tickets ✅\n\n");
 
 	console.log("Migrating Chats 💬");
 
@@ -162,7 +167,7 @@ async function migratePostgresSqLite() {
 		await db.insert(schema.chats).values(allChats);
 	}
 
-	console.log("Migrated Chats ✅");
+	console.log("Migrated Chats ✅\n\n");
 
 	console.log("Migrating Chat Messages 💬");
 
@@ -170,7 +175,7 @@ async function migratePostgresSqLite() {
 		await db.insert(schema.chatMessages).values(allChatMessages);
 	}
 
-	console.log("Migrated Chat Messages ✅");
+	console.log("Migrated Chat Messages ✅\n\n");
 
 	console.log("Migrating Tickets To Users 🎫");
 
@@ -178,7 +183,7 @@ async function migratePostgresSqLite() {
 		await db.insert(schema.ticketsToUsers).values(allTicketsToUsers);
 	}
 
-	console.log("Migrated Tickets To Users ✅");
+	console.log("Migrated Tickets To Users ✅\n\n");
 
 	console.log("Migrating Chats To Users 💬");
 
@@ -186,7 +191,7 @@ async function migratePostgresSqLite() {
 		await db.insert(schema.chatsToUsers).values(allChatsToUsers);
 	}
 
-	console.log("Migrated Chats To Users ✅");
+	console.log("Migrated Chats To Users ✅\n\n");
 
 	return process.exit(0);
 }
