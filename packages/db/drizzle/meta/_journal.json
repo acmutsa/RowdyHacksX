@@ -8,6 +8,13 @@
       "when": 1740069435681,
       "tag": "0000_chilly_lady_mastermind",
       "breakpoints": true
+    },
+    {
+      "idx": 19,
+      "version": "7",
+      "when": 1729878594525,
+      "tag": "0019_lyrical_thundra",
+      "breakpoints": true
     }
   ]
 }

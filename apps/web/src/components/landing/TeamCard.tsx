@@ -125,6 +125,7 @@ export default function TeamCard({ person }: TeamCardProps) {
 										alt={`${person.name} professional`}
 										width={300}
 										height={0}
+										priority={true}
 										className={`absolute w-full rounded-md bg-center object-cover`}
 										style={{
 											scale: person.professionalPicture

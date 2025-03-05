@@ -5,6 +5,7 @@ import About from "@/components/landing/About";
 
 import Partners from "@/components/landing/Partners";
 import Footer from "@/components/landing/Footer";
+import { Sponsors } from "@/components/landing/Sponsors";
 import MLHBadge from "@/components/landing/MLHBadge";
 import Team from "@/components/landing/Team";
 import { Oswald } from "next/font/google";
@@ -52,6 +53,7 @@ export default function Home() {
 				</div>
 				<Hero />
 				<About />
+				<Sponsors />
 				{/* <Partners /> */}
 				<WorkWithUs />
 				<Team />

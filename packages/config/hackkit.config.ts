@@ -811,8 +811,8 @@ const c = {
 	siteUrl: "https://rowdyhacks.org", // Do not have a trailing slash
 	defaultMetaDataDescription: "Your Metadata Description Here",
 	botName: "RowdyBot",
+	botParticipantRole: "RHX Participant",
 	rsvpDefaultLimit: 500,
-	botParticipantRole: "Participant",
 	hackathonTimezone: "America/Chicago",
 	localUniversityName: schoolOptions[0],
 	localUniversitySchoolIDName: "UTSA id (abc123)",
@@ -865,7 +865,7 @@ const c = {
 		links: [
 			{
 				name: "Source Code",
-				link: "https://github.com/acmutsa/HackKit",
+				link: "https://github.com/acmutsa/RowdyHacksX",
 			},
 		],
 		otherHackathons: [
@@ -881,34 +881,34 @@ const c = {
 		],
 	},
 	groups: {
-		"Guild A | Group A": {
+		"Doc Brown | Group A": {
 			discordRole: "Doc Brown",
 		},
-		"Guild A | Group B": {
+		"Doc Brown | Group B": {
 			discordRole: "Doc Brown",
 		},
-		"Guild B | Group A": {
+		"Marty | Group A": {
 			discordRole: "Marty",
 		},
-		"Guild B | Group B": {
+		"Marty | Group B": {
 			discordRole: "Marty",
 		},
-		"Guild C | Group A": {
+		"Dr. Who | Group A": {
 			discordRole: "Dr. Who",
 		},
-		"Guild C | Group B": {
+		"Dr. Who | Group B": {
 			discordRole: "Dr. Who",
 		},
-		"Guild D | Group A": {
+		"Terminator | Group A": {
 			discordRole: "Terminator",
 		},
-		"Guild D | Group B": {
+		"Terminator | Group B": {
 			discordRole: "Terminator",
 		},
-		"Guild E | Group A": {
+		"Mr. Peabody and Sherman | Group A": {
 			discordRole: "Mr. Peabody and Sherman",
 		},
-		"Guild E | Group B": {
+		"Mr. Peabody and Sherman | Group B": {
 			discordRole: "Mr. Peabody and Sherman",
 		},
 	},
@@ -919,7 +919,7 @@ const c = {
 		facebook: "https://facebook.com/rowdyhacks",
 		twitter: "https://twitter.com/rowdyhacks",
 		github: "https://github.com/acmutsa",
-		guide: "https://go.rowdyhacks.org/discord",
+		guide: "https://guide.rowdyhacks.org",
 	},
 	icon: {
 		sm: "/img/logo/rhbttf.svg",
@@ -962,6 +962,8 @@ const c = {
 	noResumeProvidedURL:
 		"https://static.acmutsa.org/No%20Resume%20Provided.pdf",
 	// Come in and change this date to whenever the hackathon starts
+	startDate: new Date(new Date(2024, 9, 26).setHours(9)),
+	prettyLocation: "San Pedro I, UTSA",
 	startDate: new Date(new Date(2024, 9, 26).setHours(9)),
 	prettyLocation: "San Pedro I, UTSA",
 	roleBadges: {
@@ -1044,6 +1046,9 @@ const publicRoutes = [
 	"/404",
 	"/bugreport",
 	"/faq",
+	"/live",
+	"/live/overlay",
+	"/api/live/announcement",
 ];
 
 export default c;

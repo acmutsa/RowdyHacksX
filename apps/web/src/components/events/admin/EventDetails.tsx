@@ -57,7 +57,7 @@ export default function EventFull({ event }: { event: Event }) {
 					<span className="font-normal">{event.location}</span>
 				</h3>
 
-				<h3 className="mb-2 font-bold">Description:</h3>
+				<h3 className="mb-2 font-bold">Description</h3>
 				<p>
 					<Balancer>{event.description}</Balancer>
 				</p>

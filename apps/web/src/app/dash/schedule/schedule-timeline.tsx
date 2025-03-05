@@ -39,13 +39,16 @@ export default function ScheduleTimeline({
 	timezone,
 }: ScheduleTimelineProps) {
 	return (
-		<div className="mx-auto mt-5 w-3/4">
+		<div className="mx-auto mt-5 w-11/12 md:w-3/4">
 			<table className="p-4">
 				<tbody>
 					{Array.from(splitByDay(schedule).entries()).map(
 						([dayName, arr]): ReactNode => (
 							<>
-								<tr key={dayName + " title"} className="py-8">
+								<tr
+									key={dayName + " title"}
+									className="py-16 md:py-8"
+								>
 									<td></td>
 									<td
 										className="w-1"
@@ -55,7 +58,7 @@ export default function ScheduleTimeline({
 										}}
 									></td>
 									<td>
-										<h2 className="ml-16 w-full border-b py-4 text-6xl font-black">
+										<h2 className="ml-4 w-full py-4 text-4xl font-black md:ml-16 md:border-b md:text-6xl">
 											{dayName}
 										</h2>
 									</td>
@@ -101,8 +104,8 @@ export function EventRow({ event, userTimeZone }: EventRowProps) {
 	const color = (c.eventTypes as Record<string, string>)[event.type];
 	return (
 		<Link href={href} legacyBehavior>
-			<tr className="cursor-pointer text-center text-xl text-foreground">
-				<td className="pr-16">{`${startTimeFormatted} - ${endTimeFormatted}`}</td>
+			<tr className="md:py-none cursor-pointer py-24 text-center text-xl text-foreground">
+				<td className="pr-4 text-sm md:pr-16 md:text-xl">{`${startTimeFormatted} - ${endTimeFormatted}`}</td>
 				<td
 					className={"relative h-20 w-1"}
 					style={{
@@ -130,8 +133,8 @@ export function EventRow({ event, userTimeZone }: EventRowProps) {
 						</div>
 					)}
 				</td>
-				<td className="pl-16">
-					<div className="flex flex-wrap items-center justify-start gap-x-2 text-left text-3xl">
+				<td className="pl-4 md:pl-16">
+					<div className="md:py-none flex flex-wrap items-center justify-start gap-x-2 py-4 text-left text-3xl">
 						{event.title}{" "}
 						<Badge
 							variant={"outline"}
